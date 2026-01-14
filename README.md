@@ -24,3 +24,35 @@ publicidad nativa...
 - Revisar estructura de código con un lint
 - Publicar en github pages
 - **Opcional**. Conseguir un dominio personalizado y añadir el CNAME al proyecto.
+
+## Estructura
+
+Esta es la estructura solicitada para el proyecto:
+
+root/  
+├── index.html  
+├── audios/  
+├── css/  
+├── fuentes/  
+├── html/  
+├── img/  
+├── js/  
+└── videos/  
+
+Es importante tener en cuenta que esta organización no es la más habitual en entornos profesionales para proyectos HTML estáticos, pero se ha seguido para cumplir con los requisitos de la práctica.
+
+Si en el futuro se quisiera reutilizar o ampliar el proyecto, una estructura más común podría ser la siguiente:
+
+root/  
+├── index.html  
+├── contacto.html  
+├── galeria.html  
+├── ...  
+└── assets/  
+    ├── css/  
+    ├── js/  
+    ├── img/  
+    ├── audios/  
+    └── videos/  
+
+
