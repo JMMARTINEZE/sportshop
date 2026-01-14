@@ -5,16 +5,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sport Shop</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Tienda de artículos deportivos">
+    <meta name="keywords" content="deportes, tienda, artículos deportivos, sport shop">
+
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- <link href="css/aos/aos.css" rel="stylesheet"> -->
+
+    <!-- Template Main CSS File -->
+    <link href="css/styles.css" rel="stylesheet">
+
 </head>
 
 <body>
-    <h1>Bienvenido a Sport Shop</h1>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas quo dignissimos rerum, fugit libero quaerat
-        accusantium architecto aliquid error quibusdam! Eum quidem facilis iure voluptate distinctio quisquam provident
-        alias numquam?</p>
+    <header id="header" class="header fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+            <div class="container-xl">
+                <a href="index.html" class="navbar-brand d-flex align-items-center">
+                    <img src="img/logo.webp" alt="logo" class="me-2">
+                    <span class="h1 mb-0 fs-3 text-white fw-bold">Sport Shop</span>
+                </a>
 
-    <a href="html/sub1/sub1.html">Ir a Sub1</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Galería</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main" class="main">
+
+        <section id="sportshop"
+            class="sportshop min-vh-100 d-flex align-items-center justify-content-center position-relative overflow-hidden text-white">
+
+            <img src="img/351339971_786597149711764_4855264198635721040_n.jpg" alt="Background"
+                class="hero-img position-absolute top-0 start-0 w-100 h-100 object-fit-cover">
+
+            <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100 bg-dark"></div>
+
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-2 fw-bold">SportShop</h2>
+                        <p class="fs-4">Donde el deporte nace y la pasión no tiene límites.</p>
+                        <div class="social-links d-flex justify-content-center gap-3 mt-4">
+                            <a href="#" class="text-white fs-3"><i class="bi bi-twitter-x"></i></a>
+                            <a href="#" class="text-white fs-3"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="text-white fs-3"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="text-white fs-3"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Vendor JS Files -->
+    <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+    <!-- <script src="js/aos/aos.js"></script> -->
+
+
+    <!-- Main JS File -->
+    <script src="js/main.js"></script>
+
+
 </body>
 
 </html>
