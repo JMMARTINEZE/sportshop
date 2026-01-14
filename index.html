@@ -19,6 +19,7 @@
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
     <link href="css/aos/aos.css" rel="stylesheet">
+    <link href="css/glightbox/glightbox.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
     <link href="css/styles.css" rel="stylesheet">
@@ -76,6 +77,14 @@
         </section>
 
         <section id="categories" class="py-5">
+
+            <div class="container section-title text-center mb-5" data-aos="fade-up">
+                <span class="subtitle">Noticias</span>
+                <h2>Nuestro equipamiento</h2>
+                <p>Descubre las últimas novedades y los artículos deportivos de alto rendimiento para cada disciplina.
+                </p>
+            </div>
+
             <div class="container">
                 <div class="row gy-4">
 
@@ -146,11 +155,81 @@
                 </div>
             </div>
         </section>
+
+        <section id="frontshop" class="frontshop py-5 bg-dark text-white">
+            <div class="container section-title text-center mb-5" data-aos="fade-up">
+                <span class="subtitle">Catálogo</span>
+                <h2 class="text-white">Nuestros Productos</h2>
+                <p>Selecciona tu disciplina y encuentra el mejor equipamiento.</p>
+            </div>
+
+            <div class="container">
+                <div class="isotope-layout" data-default-filter="*" data-layout="masonry">
+
+                    <ul class="frontshop-filters d-flex justify-content-center gap-3 mb-5 list-unstyled"
+                        data-aos="fade-up">
+                        <li data-filter="*" class="filter-active">Todos</li>
+                        <li data-filter=".filter-basket">Basket</li>
+                        <li data-filter=".filter-running">Running</li>
+                        <li data-filter=".filter-futbol">Fútbol</li>
+                    </ul>
+
+                    <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+                        <div class="col-lg-4 col-md-6 frontshop-item isotope-item filter-basket">
+                            <div class="frontshop-card border-0 position-relative overflow-hidden rounded-4">
+                                <img src="img/basket/zapatillas-anta-shock-wave-6-pro-thunderbird.webp"
+                                    class="img-fluid" alt="Zapatillas Basket">
+                                <div class="frontshop-overlay d-flex flex-column justify-content-end p-4">
+                                    <span class="badge bg-danger mb-2 w-fit">NBA Series</span>
+                                    <a href="html/zapatilla-pro-court.html" target="_blank"
+                                        class="text-decoration-none">
+                                        <h4 class="text-white">Zapatillas Pro Court</h4>
+                                    </a>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="price h5 mb-0">120€</span>
+                                        <a href="img/basket/zapatillas-anta-shock-wave-6-pro-thunderbird.webp"
+                                            class="glightbox btn btn-outline-light btn-sm rounded-circle">
+                                            <i class="bi bi-plus-lg"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 frontshop-item isotope-item filter-running">
+                            <div class="frontshop-card border-0 position-relative overflow-hidden rounded-4">
+                                <img src="img/running/reloj.webp" class="img-fluid" alt="Reloj Running">
+                                <div class="frontshop-overlay d-flex flex-column justify-content-end p-4">
+                                    <span class="badge bg-danger mb-2 w-fit">NBA Series</span>
+                                    <a href="html/reloj-running.html" target="_blank" class="text-decoration-none">
+                                        <h4 class="text-white">Reloj Running</h4>
+                                    </a>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="price h5 mb-0">120€</span>
+                                        <a href="img/running/reloj.webp"
+                                            class="glightbox btn btn-outline-light btn-sm rounded-circle">
+                                            <i class="bi bi-plus-lg"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
     </main>
 
     <!-- Vendor JS Files -->
-    <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/boostrap/bootstrap.bundle.min.js"></script>
     <script src="js/aos/aos.js"></script>
+    <script src="js/glightbox/glightbox.min.js"></script>
+    <script src="js/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="js/imagesloaded/imagesloaded.pkgd.min.js"></script>
 
 
     <!-- Main JS File -->
