@@ -1,119 +1,115 @@
-// Cambio de color del logo y el menú
-document.addEventListener('DOMContentLoaded', () => {
-    const header = document.querySelector('#header');
-    const heroSection = document.querySelector('#sportshop');
-
-    // Solo ejecutamos si ambos elementos existen
-    if (header && heroSection) {
-        const headerObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                // isIntersecting es true cuando el video se ve
-                if (!entry.isIntersecting) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-        }, {
-            // Umbral: 0 significa que en cuanto el primer píxel del video desaparece, cambia.
-            threshold: 0,
-            rootMargin: "-10% 0px 0px 0px" // Cambia un poco antes de que termine el video
-        });
-
-        headerObserver.observe(heroSection);
-    } else {
-        console.warn("Navegación dinámica: No se encontró el id='sportshop'");
-    }
-});
-
-// Inicialización de AOS (Animate On Scroll)
-
-document.addEventListener('DOMContentLoaded', function() {
-  AOS.init({
-    duration: 1000,
-    easing: 'ease-in-out',
-    once: true,
-    offset: 50, // Dispara la animación 50px antes de llegar al elemento
-    mirror: false
-  });
-
-  // Forzar recálculo después de cargar todo
-  window.addEventListener('load', function() {
-    AOS.refresh();
-  });
-});
-
 /**
-* SportShop JS - Versión Blindada
-*/
+ * SportShop JS - Versión 2
+ * Todo el control de la web en un único encapsulado.
+ */
 (function() {
-  "use strict";
+    "use strict";
 
-  /**
-   * 1. Inicialización de AOS
-   */
-  function initAOS() {
-    AOS.init({
-      duration: 1000,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-    });
-  }
-
-  /**
-   * 2. Inicialización de Isotope y Filtros
-   */
-  function initIsotope() {
-    // Buscamos el contenedor
-    let container = document.querySelector('.isotope-container');
-    
-    if (container) {
-      // Usamos imagesLoaded para asegurarnos de que las fotos están ahí
-      imagesLoaded(container, function() {
-        let isotope = new Isotope(container, {
-          itemSelector: '.isotope-item',
-          layoutMode: 'masonry',
-          filter: '*'
-        });
-
-        // Configuración de los filtros
-        let filters = document.querySelectorAll('.frontshop-filters li');
-
-        filters.forEach(function(el) {
-          el.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Gestión de clases activas
-            filters.forEach(f => f.classList.remove('filter-active'));
-            this.classList.add('filter-active');
-
-            // Aplicar el filtro
-            isotope.arrange({
-              filter: this.getAttribute('data-filter')
+    /*--------------------------------------------------------------
+    # 1. INICIALIZACIÓN DE AOS (Animaciones)
+    --------------------------------------------------------------*/
+    function initAOS() {
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 1000,
+                easing: 'ease-in-out',
+                once: true,
+                mirror: false,
+                offset: 50
             });
-
-            // Refrescar AOS al terminar la animación
-            isotope.on('arrangeComplete', function() {
-              AOS.refresh();
-            });
-          }, false);
-        });
-      });
+        }
     }
-  }
 
-  // Ejecutar todo cuando la ventana esté totalmente cargada
-  window.addEventListener('load', () => {
-    initAOS();
-    initIsotope();
-  });
+    /*--------------------------------------------------------------
+    # 2. CONTROL DE NAVEGACIÓN (Header Scroll)
+    --------------------------------------------------------------*/
+    function initHeaderScroll() {
+        const header = document.querySelector('#header');
+        const heroSection = document.querySelector('#sportshop');
+
+        if (header && heroSection) {
+            const headerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
+            }, {
+                threshold: 0,
+                rootMargin: "-10% 0px 0px 0px"
+            });
+
+            headerObserver.observe(heroSection);
+        }
+    }
+
+    /*--------------------------------------------------------------
+    # 3. ISOTOPE Y FILTROS DE TIENDA
+    --------------------------------------------------------------*/
+    function initIsotope() {
+        let container = document.querySelector('.isotope-container');
+        
+        if (container && typeof Isotope !== 'undefined') {
+            // Esperamos a que las imágenes carguen para evitar solapamientos
+            imagesLoaded(container, function() {
+                let isotope = new Isotope(container, {
+                    itemSelector: '.isotope-item',
+                    layoutMode: 'masonry',
+                    filter: '*'
+                });
+
+                let filters = document.querySelectorAll('.frontshop-filters li');
+
+                filters.forEach(el => {
+                    el.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        // Clase activa
+                        filters.forEach(f => f.classList.remove('filter-active'));
+                        this.classList.add('filter-active');
+
+                        // Filtrar
+                        isotope.arrange({
+                            filter: this.getAttribute('data-filter')
+                        });
+
+                        // Refrescar AOS al mover elementos
+                        isotope.on('arrangeComplete', () => {
+                            AOS.refresh();
+                        });
+                    });
+                });
+            });
+        }
+    }
+
+    /*--------------------------------------------------------------
+    # 4. GLIGHTBOX (Galería de imágenes)
+    --------------------------------------------------------------*/
+    function initGLightbox() {
+        if (typeof GLightbox !== 'undefined') {
+            GLightbox({
+                selector: '.glightbox'
+            });
+        }
+    }
+
+    /*--------------------------------------------------------------
+    # 5. LANZADOR GLOBAL (Eventos de carga)
+    --------------------------------------------------------------*/
+    
+    // Ejecución rápida al cargar el DOM (Interacción y Header)
+    document.addEventListener('DOMContentLoaded', () => {
+        initHeaderScroll();
+        initGLightbox();
+    });
+
+    // Ejecución tras carga total (Layouts complejos y Animaciones)
+    window.addEventListener('load', () => {
+        initAOS();
+        initIsotope();
+    });
 
 })();
-
-/**
- * Inicialización de GLightbox
- */
-const lightbox = GLightbox({
-  selector: '.glightbox'
-});
