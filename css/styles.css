@@ -66,6 +66,45 @@ main {
     }
 }
 
+/* Estado inicial: Transparente y sin sombras */
+.header {
+    transition: all 0.4s ease-in-out;
+    background-color: transparent;
+    padding: 20px 0; /* Un poco más de aire al inicio */
+}
+
+/* Estado al hacer scroll (se activará por JS) */
+.header.scrolled {
+    background-color: rgba(20, 22, 24, 0.95); /* Negro azulado con ligera transparencia */
+    padding: 10px 0; /* El menú se hace más estrecho al bajar, efecto profesional */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px); /* Efecto cristal esmerilado opcional */
+}
+
+/* Aseguramos que los enlaces siempre se vean bien */
+.header .nav-link {
+    color: #ffffff !important;
+    font-weight: 500;
+}
+
+/*--------------------------------------------------------------
+# Menú de navegación
+--------------------------------------------------------------*/
+
+.navbar-brand img {
+    max-height: 40px;
+    width: auto;
+}
+
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 15px;
+    }
+}
+
 /*--------------------------------------------------------------
 # Sección SportShop (Hero)
 --------------------------------------------------------------*/
@@ -106,6 +145,8 @@ main {
 --------------------------------------------------------------*/
 #categories {
   background-color: #f8f9fa;
+  padding: 80px 0; /* Espacio amplio para que respire antes del negro */
+  color: #333;
 }
 
 .category-item {
@@ -192,6 +233,12 @@ main {
 /*--------------------------------------------------------------
 # Sección Frontal de tienda (frontshop)
 --------------------------------------------------------------*/
+.frontshop {
+    background-color: #1a1d20; /* Gris muy oscuro, no negro total */
+    padding: 80px 0;
+    color: #ffffff;
+}
+
 /* Estilos Filtros */
 .frontshop-filters li {
     cursor: pointer;
@@ -209,8 +256,14 @@ main {
 
 /* Tarjeta de Producto */
 .frontshop-card {
-    height: 400px;
+    height: 350px;
 }
+@media (max-width: 576px) {
+    .frontshop-filters li {
+        padding: 8px 15px; /* Botones un poco más pequeños */
+        font-size: 14px;
+    }
+  }    
 
 .frontshop-card img {
     width: 100%;
@@ -219,12 +272,22 @@ main {
     transition: 0.5s;
 }
 
+.frontshop-overlay h4 {
+    font-size: 1.1rem; 
+    margin-bottom: 5px;
+}
+
+.frontshop-overlay .price {
+    font-size: 1rem;
+}
+
 .frontshop-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 60%);
     opacity: 0;
     transition: 0.4s;
+    padding: 1.25rem !important; 
 }
 
 .frontshop-card:hover .frontshop-overlay {
@@ -246,4 +309,90 @@ main {
 .isotope-item {
     transition-property: transform, opacity;
     transition-duration: 0.5s;
+}
+
+/*--------------------------------------------------------------
+# CTA Box - Frontshop
+--------------------------------------------------------------*/
+.frontshop .cta-box {
+    background: linear-gradient(135deg, #dc3545 0%, #a71d2a 100%);
+    border-radius: 20px;
+    padding: 45px 50px;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    border: none;
+}
+
+/* Círculo decorativo de fondo */
+.frontshop .cta-box::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 350px;
+    height: 350px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.frontshop .cta-box .row {
+    position: relative;
+    z-index: 1;
+}
+
+.frontshop .cta-box h3 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+}
+
+.frontshop .cta-box p {
+    font-size: 16px;
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.frontshop .cta-box .cta-btn {
+    display: inline-block;
+    background: #ffffff;
+    color: #dc3545;
+    padding: 14px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+}
+
+.frontshop .cta-box .cta-btn:hover {
+    transform: scale(1.05);
+    background: #f8f9fa;
+    color: #bd2130;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+    .frontshop .cta-box {
+        padding: 35px 30px;
+        text-align: center;
+    }
+    .frontshop .cta-box p {
+        margin-bottom: 25px;
+    }
+}
+
+/*--------------------------------------------------------------
+# Footer Estilos
+--------------------------------------------------------------*/
+/* Footer */
+.footer-global {
+    background-color: #111111; /* Un tono distinto al frontshop para marcar el final */
 }

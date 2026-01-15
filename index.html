@@ -31,19 +31,29 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
             <div class="container-xl">
                 <a href="index.html" class="navbar-brand d-flex align-items-center">
-                    <img src="img/logo.webp" alt="logo" class="me-2">
+                    <img src="img/logo.webp" alt="Sport Shop Logo" class="me-2" style="height: 40px;">
                     <span class="h1 mb-0 fs-3 text-white fw-bold">Sport Shop</span>
                 </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Menú de navegación">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Galería</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="html/news/news.html">Novedades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="html/shop/shop.html">Tienda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="html/contacto.html">Contacto</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -166,7 +176,7 @@
             <div class="container">
                 <div class="isotope-layout" data-default-filter="*" data-layout="masonry">
 
-                    <ul class="frontshop-filters d-flex justify-content-center gap-3 mb-5 list-unstyled"
+                    <ul class="frontshop-filters d-flex flex-wrap justify-content-center gap-2 gap-md-3 mb-5 list-unstyled"
                         data-aos="fade-up">
                         <li data-filter="*" class="filter-active">Todos</li>
                         <li data-filter=".filter-basket">Basket</li>
@@ -175,7 +185,7 @@
                     </ul>
 
                     <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-                        <div class="col-lg-3 col-md-6 col-12 frontshop-item isotope-item filter-basket">
+                        <article class="col-lg-3 col-md-6 col-12 frontshop-item isotope-item filter-basket">
                             <div class="frontshop-card border-0 position-relative overflow-hidden rounded-4">
                                 <img src="img/basket/zapatillas/01/pinkshoes.png" class="img-fluid"
                                     alt="Zapatillas Basket">
@@ -194,8 +204,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-12 frontshop-item isotope-item filter-running">
+                        </article>
+                        <article class="col-lg-3 col-md-6 col-12 frontshop-item isotope-item filter-running">
                             <div class="frontshop-card border-0 position-relative overflow-hidden rounded-4">
                                 <img src="img/running/reloj.webp" class="img-fluid" alt="Reloj Running">
                                 <div class="frontshop-overlay d-flex flex-column justify-content-end p-4">
@@ -213,8 +223,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-12 frontshop-item isotope-item filter-futbol">
+                        </article>
+                        <article class="col-lg-3 col-md-6 col-12 frontshop-item isotope-item filter-futbol">
                             <div class="frontshop-card border-0 position-relative overflow-hidden rounded-4">
                                 <img src="img/futbol/camisetas/01/camisetasolo1.png" class="img-fluid"
                                     alt="Camiseta de equipación">
@@ -233,8 +243,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-12 frontshop-item isotope-item filter-running">
+                        </article>
+                        <article class="col-lg-3 col-md-6 col-12 frontshop-item isotope-item filter-running">
                             <div class="frontshop-card border-0 position-relative overflow-hidden rounded-4">
                                 <img src="img/running/running-shoes.jpg" class="img-fluid" alt="Zapatillas Running">
                                 <div class="frontshop-overlay d-flex flex-column justify-content-end p-4">
@@ -251,10 +261,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </article>
 
                         <!-- 2ª fila-->
-                        <div class="col-lg-3 col-md-6 col-12 frontshop-item isotope-item filter-futbol">
+                        <article class="col-lg-3 col-md-6 col-12 frontshop-item isotope-item filter-futbol">
                             <div class="frontshop-card border-0 position-relative overflow-hidden rounded-4">
                                 <img src="img/futbol/camisetas/02/camisetasolo2.png" class="img-fluid"
                                     alt="Camiseta de equipación">
@@ -273,17 +283,20 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-12 frontshop-item isotope-item filter-basket">
+                        </article>
+                        <article class="col-lg-3 col-md-6 col-12 frontshop-item isotope-item filter-basket">
                             <div class="frontshop-card border-0 position-relative overflow-hidden rounded-4">
                                 <img src="img/basket/camisetas/01/camisetabasket.png" class="img-fluid"
                                     alt="Camiseta de basket">
+
                                 <div class="frontshop-overlay d-flex flex-column justify-content-end p-4">
                                     <span class="badge bg-danger mb-2 w-fit">Oferta especial</span>
+
                                     <a href="html/shop/basket/camisetabasket.html" target="_self"
                                         class="text-decoration-none">
                                         <h4 class="text-white">Camiseta de basket</h4>
                                     </a>
+
                                     <div class="d-flex justify-content-between align-items-center">
                                         <span class="price h5 mb-0">50€</span>
                                         <a href="img/basket/camisetas/01/camisetabasket.png"
@@ -293,8 +306,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-12 frontshop-item isotope-item filter-basket">
+                        </article>
+                        <article class="col-lg-3 col-md-6 col-12 frontshop-item isotope-item filter-basket">
                             <div class="frontshop-card border-0 position-relative overflow-hidden rounded-4">
                                 <img src="img/basket/camisetas/02/camisetabasket2.png" class="img-fluid"
                                     alt="Camiseta de basket">
@@ -313,8 +326,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-12 frontshop-item isotope-item filter-futbol">
+                        </article>
+                        <article class="col-lg-3 col-md-6 col-12 frontshop-item isotope-item filter-futbol">
                             <div class="frontshop-card border-0 position-relative overflow-hidden rounded-4">
                                 <img src="img/futbol/camisetas/03/camisetasolo3.png" class="img-fluid"
                                     alt="Camiseta de equipación">
@@ -333,12 +346,92 @@
                                     </div>
                                 </div>
                             </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="container mt-5">
+                    <div class="row">
+                        <div class="col-12" data-aos="fade-up" data-aos-delay="200">
+                            <div class="cta-box">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-8">
+                                        <h3>¿Te han gustado estos productos destacados?</h3>
+                                        <p>Accede a nuestra tienda completa y descubre el equipamiento profesional para
+                                            llevar tu
+                                            rendimiento al siguiente nivel.</p>
+                                    </div>
+                                    <div class="col-lg-4 text-lg-end text-center">
+                                        <a href="html/shop/shop.html" class="cta-btn">Ir a la tienda completa</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <footer class="footer-global bg-dark text-white pt-5 pb-3">
+            <div class="container">
+
+                <hr class="my-4 border-secondary">
+
+                <div class="row gy-4">
+                    <div class="col-lg-4 col-md-6">
+                        <h2 class="fw-bold text-danger">SPORT<span>SHOP</span></h2>
+                        <p class="text-secondary">Tu tienda de confianza para equipamiento de alto rendimiento. Elevamos
+                            tu
+                            juego al siguiente nivel.</p>
+                        <div class="social-links d-flex gap-3">
+                            <a href="https://instagram.com" target="_blank" class="text-white h4"><i
+                                    class="bi bi-instagram"></i></a>
+                            <a href="https://twitter.com" target="_blank" class="text-white h4"><i
+                                    class="bi bi-twitter-x"></i></a>
+                            <a href="https://facebook.com" target="_blank" class="text-white h4"><i
+                                    class="bi bi-facebook"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                        <h5 class="fw-bold mb-3">Navegación</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="index.html" target="_self"
+                                    class="text-secondary text-decoration-none">Inicio</a></li>
+                            <li><a href="html/shop/shop.html" target="_self"
+                                    class="text-secondary text-decoration-none">Tienda</a>
+                            </li>
+                            <li><a href="#categories" target="_self"
+                                    class="text-secondary text-decoration-none">Novedades</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                        <h5 class="fw-bold mb-3">Soporte</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="html/contacto.html" class="text-secondary text-decoration-none">Contacto</a>
+                            </li>
+                            <li><a href="#" class="text-secondary text-decoration-none">Envíos y Devoluciones</a></li>
+                            <li><a href="#" class="text-secondary text-decoration-none">Guía de tallas</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <h5 class="fw-bold mb-3">Suscríbete</h5>
+                        <p class="text-secondary">Recibe ofertas exclusivas y novedades.</p>
+                        <form class="d-flex gap-2">
+                            <input type="email" class="form-control rounded-pill" placeholder="Tu email">
+                            <button class="btn btn-danger rounded-circle"><i class="bi bi-send"></i></button>
+                        </form>
+                    </div>
+                </div>
+
+                <hr class="my-4 border-secondary">
+
+                <div class="text-center text-secondary small">
+                    © 2026 SportShop. Todos los derechos reservados. | Diseñado para el trabajo de enfoque de Lenguaje
+                    de Marcas.
+                </div>
+
+            </div>
+        </footer>
 
     </main>
 
