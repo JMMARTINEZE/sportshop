@@ -1,6 +1,6 @@
 /**
- * SportShop JS - Versión Profesional Blindada
- * Todo el control de la web en un único motor encapsulado.
+ * SportShop JS - Versión 2
+ * Todo el control de la web en un único encapsulado.
  */
 (function() {
     "use strict";
