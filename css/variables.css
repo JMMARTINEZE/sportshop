@@ -1,0 +1,21 @@
+:root {
+    /* Colores Marca */
+    --accent-color: #dc3545;       /* Rojo SportShop */
+    --accent-hover: #b02a37;       /* Rojo oscuro */
+    --accent-soft: rgba(220, 53, 69, 0.25);
+    
+    /* Paleta de Neutros */
+    --white: #ffffff;
+    --light-gray: #f8f9fa;
+    --text-muted: #6c757d;
+    --dark-color: #212529;         /* Texto principal */
+    --header-dark: #1a1d20;        /* Fondos de Header/Footer */
+    --footer-black: #111111;
+    
+    /* Tipografía */
+    --main-font: 'Roboto', sans-serif;
+    
+    /* Sombras y Bordes */
+    --shadow-standard: 0 2px 10px rgba(0,0,0,0.05);
+    --shadow-header: 0 4px 15px rgba(0, 0, 0, 0.3);
+}

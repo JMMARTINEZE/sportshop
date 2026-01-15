@@ -1,0 +1,128 @@
+/*--------------------------------------------------------------
+# ESTILOS GLOBALES Y ELEMENTOS BASE
+--------------------------------------------------------------*/
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--main-font);
+    overflow-x: hidden; 
+    width: 100%;
+    color: var(--dark-color);
+}
+
+main {
+    width: 100%;
+    overflow: clip;
+}
+
+/* Breadcrumbs */
+.breadcrumb-item.active {
+    color: var(--accent-color);
+}
+
+/* Acordeón */
+.accordion-item {
+    box-shadow: var(--shadow-standard);
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--accent-color);
+    color: var(--light-gray);
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem var(--accent-soft);
+    border-color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# COMPONENTE: TÍTULOS DE SECCIÓN
+--------------------------------------------------------------*/
+
+.section-title .subtitle {
+    color: var(--accent-color);
+    font-family: var(--main-font);
+}
+
+.section-title h2 {
+    color: var(--dark-color);
+}
+
+.section-title h2::after {
+    background: var(--accent-color);
+}
+
+.section-title p {
+    color: var(--text-muted);
+}
+
+/*--------------------------------------------------------------
+# MENÚ DE NAVEGACIÓN (HEADER)
+--------------------------------------------------------------*/
+
+.header.scrolled {
+    background-color: rgba(20, 22, 24, 0.95); /* Mantengo rgba para transparencia */
+    box-shadow: var(--shadow-header);
+}
+
+.header .nav-link {
+    color: var(--white) !important;
+}
+
+.header .nav-link.active {
+    color: var(--accent-color) !important;
+}
+
+@media (min-width: 992px) {
+    .header .nav-link.active::after {
+        background-color: var(--accent-color);
+    }
+}
+
+.nohero-page #header {
+    background: var(--header-dark);
+}
+
+/* Forzar que el contenido no quede oculto bajo el menú */
+.nohero-page main {
+    padding-top: 80px;
+}
+
+/* Ajuste para móviles: si el header es más alto en móvil, aumentamos el padding */
+@media (max-width: 991px) {
+    .nohero-page main {
+        padding-top: 70px; 
+    }
+}
+/*--------------------------------------------------------------
+# COMPONENTE: REDES SOCIALES
+--------------------------------------------------------------*/
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# PIE DE PÁGINA GLOBAL
+--------------------------------------------------------------*/
+
+.footer-global {
+    background-color: var(--footer-black);
+    color: var(--white);
+}
+
+.footer-global h5, .footer-global h2 {
+    color: var(--white);
+}
+
+.footer-global .list-unstyled a:hover {
+    color: var(--accent-color) !important;
+}
+
+.footer-global .form-control {
+    background-color: var(--header-dark);
+    color: var(--white);
+}
