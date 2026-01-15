@@ -1,3 +1,31 @@
+// Cambio de color del logo y el menú
+document.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('#header');
+    const heroSection = document.querySelector('#sportshop');
+
+    // Solo ejecutamos si ambos elementos existen
+    if (header && heroSection) {
+        const headerObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // isIntersecting es true cuando el video se ve
+                if (!entry.isIntersecting) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        }, {
+            // Umbral: 0 significa que en cuanto el primer píxel del video desaparece, cambia.
+            threshold: 0,
+            rootMargin: "-10% 0px 0px 0px" // Cambia un poco antes de que termine el video
+        });
+
+        headerObserver.observe(heroSection);
+    } else {
+        console.warn("Navegación dinámica: No se encontró el id='sportshop'");
+    }
+});
+
 // Inicialización de AOS (Animate On Scroll)
 
 document.addEventListener('DOMContentLoaded', function() {
