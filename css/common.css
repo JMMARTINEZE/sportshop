@@ -84,17 +84,19 @@ main {
 
 .nohero-page #header {
     background: var(--header-dark);
+    border-bottom: 1px solid rgba(255,255,255,0.1); /* Ayuda a ver dónde termina el menú */
 }
 
 /* Forzar que el contenido no quede oculto bajo el menú */
 .nohero-page main {
-    padding-top: 80px;
+    padding-top: 100px; /* Un poco más de aire para el diseño deportivo */
+    min-height: 80vh;   /* Asegura que el footer no se pegue arriba si hay poco texto */
 }
 
-/* Ajuste para móviles: si el header es más alto en móvil, aumentamos el padding */
+/* Ajuste para móviles */
 @media (max-width: 991px) {
     .nohero-page main {
-        padding-top: 70px; 
+        padding-top: 80px; 
     }
 }
 /*--------------------------------------------------------------
