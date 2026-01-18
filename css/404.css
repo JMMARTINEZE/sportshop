@@ -1,0 +1,33 @@
+.error-404 {
+    background-color: var(--dark-color)
+}
+
+.error-box-card {
+    background-color: #1a1a1a; 
+    border-radius: 2rem;
+}
+
+.error-code-display {
+    font-size: clamp(4rem, 15vw, 7rem); /* Se adapta al tamaño de pantalla */
+    font-weight: 900;
+    letter-spacing: 5px;
+    text-shadow: 4px 4px 0px rgba(var(--bs-danger-rgb), 0.3); 
+    line-height: 1;
+}
+
+.error-icon i {
+    font-size: 5rem;
+    filter: drop-shadow(0 0 15px rgba(var(--bs-danger-rgb), 0.5));
+}
+
+/* Animación personalizada para el icono */
+[data-aos="bounce-in"] {
+    opacity: 0;
+    transform: scale(0.3);
+    transition-property: transform, opacity;
+}
+
+[data-aos="bounce-in"].aos-animate {
+    opacity: 1;
+    transform: scale(1.1); /* Hace un pequeño rebote */
+}
