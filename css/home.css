@@ -193,20 +193,49 @@
 
 .frontshop .cta-box h3 {
     color: var(--white);
+    font-weight: 800;
 }
 
-/* Botón blanco del CTA */
+/* Botón blanco del CTA - Actualizado para ser flexible */
 .frontshop .cta-box .cta-btn {
+    display: inline-block; /* Permite que el botón respete paddings */
     background: var(--white);
     color: var(--accent-color);
     padding: 14px 40px;
     border-radius: 50px;
     font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
     transition: all 0.3s ease;
+    
+    /* SEGURIDAD PARA MÓVILES */
+    max-width: 100%;      /* No deja que el botón sea más ancho que la caja */
+    white-space: normal;  /* Si el texto es muy largo, salta de línea en vez de romperse */
+    text-align: center;
 }
 
 .frontshop .cta-box .cta-btn:hover {
     transform: scale(1.05);
     background: var(--light-gray);
     color: var(--accent-hover);
+}
+
+/* --- AJUSTES PARA MÓVILES PEQUEÑOS (344px y similares) --- */
+@media (max-width: 991px) {
+    .frontshop .cta-box {
+        padding: 30px 20px; /* Reducimos el margen interno de la caja roja */
+        text-align: center;
+    }
+
+    .frontshop .cta-box h3 {
+        font-size: 1.5rem; /* Título un poco más pequeño para ganar espacio */
+        margin-bottom: 20px;
+    }
+
+    .frontshop .cta-box .cta-btn {
+        display: block;    /* En móvil se convierte en bloque (ocupa todo el ancho) */
+        width: 100%;       /* Ocupa el 100% del contenedor */
+        padding: 12px 10px;/* Padding más pequeño para que el texto no sufra */
+        font-size: 14px;
+    }
 }
