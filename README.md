@@ -8,10 +8,10 @@ Estas son las tareas pendientes en el desarrollo:
 - Crear niveles
   - Nivel 0 - Index ✅
   - Nivel 1 - Tienda ⬜
-  - Nivel 1 - Noticias ⬜
+  - Nivel 1 - Noticias ✅
   - Nivel 1 - Contacto ✅
   - Nivel 2 - Detalle de producto ⬜
-  - Nivel 2 - Noticias por categoría ⬜
+  - Nivel 2 - Noticias por categoría ✅
 - Formulario con al menos 5 tipos de componentes diferentes (cajas de
 texto, radio buon, listas desplegables, etc…) ✅
 - Tablas ✅
@@ -23,7 +23,7 @@ externas (de otras direcciones ajenas a la nuestra) ✅
 - iFrames ✅
 - Al menos 1 canal de contenidos a elegir por el alumno. Por ejemplo, Blog
 del sitio web de la tienda digital, Redes sociales, Newsleers,
-publicidad nativa... ⬜
+publicidad nativa... ✅
 - Revisar estructura de código con un linter ✅
 - Publicar en github pages ✅
 - **Opcional**. Conseguir un dominio personalizado y añadir el CNAME al proyecto. ⬜
@@ -58,4 +58,14 @@ root/
     ├── audios/  
     └── videos/  
 
+## Avisos y autoría
+Todo el contenido utilizado en este proyecto procede de fuentes gratuitas y de libre distribución. No soy autora del material original ni reclamo ningún derecho sobre él.
+Los textos de las noticias han sido generados mediante inteligencia artificial con fines exclusivamente educativos, y las imágenes se han obtenido de bancos de recursos gratuitos, concretamente:
+- https://unsplash.com/
+- https://www.vecteezy.com/
 
+Es importante señalar que este proyecto no pretende reflejar información deportiva real. Los contenidos se han creado únicamente para simular una tienda deportiva y practicar el diseño y la estructura de una web.
+
+Asimismo, dado que se trata de una práctica de instituto, no todos los enlaces de los artículos son funcionales. Se han implementado algunos ejemplos a modo de demostración, pero la mayoría no redirigen a ninguna página.
+
+Esto no constituye un error, sino una decisión planeada, ya que la implementación completa de todas las noticias queda fuera del alcance del ejercicio actual y podría abordarse en el futuro mediante una base de datos u otro sistema de gestión de contenidos.
