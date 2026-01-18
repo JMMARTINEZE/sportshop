@@ -67,3 +67,34 @@
         order: 2; /* El aside pasa abajo en móvil para dar prioridad a las noticias */
     }
 }
+
+/*--------------------------------------------------------------
+# Artículos de Noticias
+--------------------------------------------------------------*/    
+.article-body {
+    line-height: 1.8; /* Más espacio entre líneas */
+    color: #333;
+}
+
+.article-body h2 {
+    padding-top: 1rem;
+}
+
+.article-body p {
+    margin-bottom: 1.5rem;
+}
+
+/* Efecto para los breadcrumbs */
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "•";
+    color: #dc3545;
+}
+
+/* Estilo para las imágenes dentro del artículo */
+.news-article img {
+    transition: transform 0.3s ease;
+}
+
+.news-article img:hover {
+    transform: scale(1.01);
+}

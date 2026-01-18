@@ -28,8 +28,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const itemsPerPage = 4; // Límite de artículos por página
     let currentPage = 1;
 
-    updateCounts(); // Actualiza los contadores al cargar la página
+    const params = new URLSearchParams(window.location.search);
+    const categoryFromUrl = params.get('category');
 
+    if (categoryFromUrl) {
+    // Verificamos si realmente existe un filtro con ese nombre
+    const targetFilter = document.querySelector(`.filter-item[data-filter="${categoryFromUrl}"]`);
+    
+    if (targetFilter) {
+        // Solo si existe, limpiamos los demás y activamos el nuevo
+        filters.forEach(f => f.classList.remove('active', 'text-danger', 'fw-bold'));
+        targetFilter.classList.add('active', 'text-danger', 'fw-bold');
+    }
+    // Si no existe, no hacemos nada y se queda "Todos" (all) activo por defecto
+}
+
+    updateCounts(); // Actualiza los contadores al cargar la página
+    
     function updateUI() {
         const newsItems = Array.from(document.querySelectorAll('.news-item'));
         const searchTerm = searchInput.value.toLowerCase().trim();
