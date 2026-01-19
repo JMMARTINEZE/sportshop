@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - Sport Shop</title>
+    <title>Tienda - Sport Shop</title>
 
     <!-- Favicons -->
     <link href="../../img/favicon.png" rel="icon">
@@ -24,7 +24,7 @@
     <link href="../../css/common.css" rel="stylesheet">
 
     <!-- CSS Específico de la Página -->
-    <link href="../../css/contacto.css" rel="stylesheet">
+    <link href="../../css/shop.css" rel="stylesheet">
 </head>
 
 <body class="nohero-page">
@@ -51,48 +51,337 @@
     </header>
 
     <main id="main">
+        <nav class="py-3 bg-light border-bottom" aria-label="breadcrumb">
+            <div class="container-xl">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="../../index.html"
+                            class="text-danger text-decoration-none">Inicio</a></li>
+                    <li class="breadcrumb-item active">Tienda</li>
+                </ol>
+            </div>
+        </nav>
 
+        <section class="shop-section py-5">
+            <div class="container-xl">
+                <div class="row">
 
+                    <aside class="col-lg-3 mb-4">
+                        <div class="sticky-top" style="top: 100px;">
+                            <div class="p-4 bg-white border rounded-4 shadow-sm">
+                                <h4 class="fw-bold mb-4">Filtros</h4>
 
+                                <div class="mb-4">
+                                    <h6 class="fw-bold text-uppercase small">Producto</h6>
+                                    <ul class="list-unstyled">
+                                        <li><button
+                                                class="filter-item active btn btn-link text-decoration-none p-0 text-dark small"
+                                                data-filter="all">Todos</button></li>
+                                        <li><button
+                                                class="filter-item btn btn-link text-decoration-none p-0 text-secondary small"
+                                                data-filter="zapatillas">Zapatillas</button></li>
+                                        <li><button
+                                                class="filter-item btn btn-link text-decoration-none p-0 text-secondary small"
+                                                data-filter="camisetas">Camisetas</button></li>
+                                        <li><button
+                                                class="filter-item btn btn-link text-decoration-none p-0 text-secondary small"
+                                                data-filter="accesorios">Accesorios</button></li>
+                                    </ul>
+                                </div>
+
+                                <div class="mb-4">
+                                    <h6 class="fw-bold text-uppercase small">Deporte</h6>
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <button
+                                                class="filter-item btn btn-link text-decoration-none p-0 text-secondary small"
+                                                data-filter="running">Running</button>
+                                        </li>
+                                        <li>
+                                            <button
+                                                class="filter-item btn btn-link text-decoration-none p-0 text-secondary small"
+                                                data-filter="baloncesto">Baloncesto</button>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <button class="btn btn-danger w-100 rounded-pill btn-sm mt-2 btn-clear-filters">
+                                    Limpiar Filtros
+                                </button>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <div class="col-lg-9">
+                        <div
+                            class="d-flex justify-content-between align-items-center mb-4 bg-white p-3 border rounded-4 shadow-sm">
+                            <div class="input-group w-50">
+                                <span class="input-group-text bg-transparent border-end-0"><i
+                                        class="bi bi-search"></i></span>
+                                <input type="text" class="form-control border-start-0" id="shopSearch"
+                                    placeholder="Buscar producto...">
+                            </div>
+                            <select class="form-select rounded-pill shadow-sm" id="sortSelect">
+                                <option value="default" selected>Ordenar por...</option>
+                                <option value="price-low">Precio: Menor a Mayor</option>
+                                <option value="price-high">Precio: Mayor a Menor</option>
+                                <option value="name-az">Nombre: A - Z</option>
+                            </select>
+                        </div>
+
+                        <div class="row g-4" id="products-container">
+                            <article class="col-md-4 product-item" data-type="zapatillas" data-category="baloncesto"
+                                data-price="120" aria-labelledby="title-pink">
+
+                                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                                    <header class="position-relative bg-light rounded-top-4">
+                                        <span class="badge bg-danger">NBA Series</span>
+                                        <img src="../../img/basket/zapatillas/01/pinkshoes.png" class="card-img-top"
+                                            alt="Zapatillas Pro Court">
+                                    </header>
+
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="text-muted small mb-1 text-uppercase">Baloncesto</p>
+                                        <h5 id="title-pink" class="card-title fw-bold mb-2">Zapatillas Pro Court</h5>
+
+                                        <p class="mt-auto">
+                                            <span class="text-danger fw-bold h5">120€</span>
+                                        </p>
+
+                                        <footer class="mt-3">
+                                            <a href="basket/pinkshoe.html"
+                                                class="btn btn-outline-dark w-100 rounded-pill btn-sm">
+                                                Ver Detalles
+                                            </a>
+                                        </footer>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="col-md-4 product-item" data-type="accesorios" data-category="running"
+                                data-price="350" aria-labelledby="title-reloj">
+                                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                                    <header>
+                                        <span class="badge bg-danger">Limited Edition</span>
+                                        <img src="../../img/running/reloj.webp" class="card-img-top"
+                                            alt="Reloj Running">
+                                    </header>
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="text-muted small mb-1 text-uppercase">Running</p>
+                                        <h5 id="title-reloj" class="card-title fw-bold mb-2">Reloj Pro-Run 2026</h5>
+                                        <p class="mt-auto">
+                                            <span class="text-danger fw-bold h5">350€</span>
+                                        </p>
+                                        <footer class="mt-3">
+                                            <a href="html/shop/running/reloj-running.html"
+                                                class="btn btn-outline-dark w-100 rounded-pill btn-sm">Ver Detalles</a>
+                                        </footer>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="col-md-4 product-item" data-type="camisetas" data-category="futbol"
+                                data-price="40" aria-labelledby="title-cam-1">
+                                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                                    <header>
+                                        <span class="badge bg-danger">Personalizable</span>
+                                        <img src="../../img/futbol/camisetas/01/camisetasolo1.png" class="card-img-top"
+                                            alt="Camiseta Fútbol">
+                                    </header>
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="text-muted small mb-1 text-uppercase">Fútbol</p>
+                                        <h5 id="title-cam-1" class="card-title fw-bold mb-2">Equipación Home 25/26</h5>
+                                        <p class="mt-auto">
+                                            <span class="text-danger fw-bold h5">40€</span>
+                                        </p>
+                                        <footer class="mt-3">
+                                            <a href="html/shop/futbol/camiseta01.html"
+                                                class="btn btn-outline-dark w-100 rounded-pill btn-sm">Ver
+                                                Detalles</a>
+                                        </footer>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="col-md-4 product-item" data-type="zapatillas" data-category="running"
+                                data-price="120" aria-labelledby="title-run-shoe">
+                                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                                    <header>
+                                        <span class="badge bg-danger">Novedad</span>
+                                        <img src="../../img/running/running-shoes.jpg" class="card-img-top"
+                                            alt="Zapatillas Running">
+                                    </header>
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="text-muted small mb-1 text-uppercase">Running</p>
+                                        <h5 id="title-run-shoe" class="card-title fw-bold mb-2">Speed Running Shoes</h5>
+                                        <p class="mt-auto">
+                                            <span class="text-danger fw-bold h5">120€</span>
+                                        </p>
+                                        <footer class="mt-3">
+                                            <a href="html/runningshoes.html"
+                                                class="btn btn-outline-dark w-100 rounded-pill btn-sm">Ver Detalles</a>
+                                        </footer>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="col-md-4 product-item" data-type="camisetas" data-category="baloncesto"
+                                data-price="50" aria-labelledby="title-cam-basket">
+                                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                                    <header>
+                                        <span class="badge bg-danger">Oferta Especial</span>
+                                        <img src="../../img/basket/camisetas/01/camisetabasket.png" class="card-img-top"
+                                            alt="Camiseta Basket">
+                                    </header>
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="text-muted small mb-1 text-uppercase">Baloncesto</p>
+                                        <h5 id="title-cam-basket" class="card-title fw-bold mb-2">Camiseta Basket Pro
+                                        </h5>
+                                        <p class="mt-auto">
+                                            <span class="text-danger fw-bold h5">50€</span>
+                                        </p>
+                                        <footer class="mt-3">
+                                            <a href="html/shop/basket/camisetabasket.html"
+                                                class="btn btn-outline-dark w-100 rounded-pill btn-sm">Ver Detalles</a>
+                                        </footer>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="col-md-4 product-item" data-type="camisetas" data-category="futbol"
+                                data-price="60" aria-labelledby="title-cam-3">
+                                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                                    <header>
+                                        <span class="badge bg-danger">Edición Especial</span>
+                                        <img src="../../img/futbol/camisetas/03/camisetasolo3.png" class="card-img-top"
+                                            alt="Camiseta Fútbol 3">
+                                    </header>
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="text-muted small mb-1 text-uppercase">Fútbol</p>
+                                        <h5 id="title-cam-3" class="card-title fw-bold mb-2">Tercera Equipación 25/26
+                                        </h5>
+                                        <p class="mt-auto">
+                                            <span class="text-danger fw-bold h5">60€</span>
+                                        </p>
+                                        <footer class="mt-3">
+                                            <a href="html/shop/futbol/camiseta03.html"
+                                                class="btn btn-outline-dark w-100 rounded-pill btn-sm">Ver
+                                                Detalles</a>
+                                        </footer>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <div id="no-results" class="col-12 text-center py-5 d-none">
+                                <i class="bi bi-search fs-1 text-muted"></i>
+                                <p class="mt-3 text-muted">No se han encontrado artículos que coincidan con tu búsqueda.
+                                </p>
+                            </div>
+
+                            <nav aria-label="Navegación de artículos" class="mt-5">
+                                <ul class="pagination justify-content-center" id="pagination">
+                                </ul>
+                            </nav>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="footer-global bg-dark text-white pt-5 pb-3">
         <div class="container">
+
+            <hr class="my-4 border-secondary">
+
             <div class="row gy-4">
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-md-6">
                     <h2 class="fw-bold text-danger">SPORT<span>SHOP</span></h2>
-                    <p class="text-secondary">Equipamiento de alto rendimiento.</p>
+                    <p class="text-secondary">Tu tienda de confianza para equipamiento de alto rendimiento. Elevamos
+                        tu
+                        juego al siguiente nivel.</p>
+                    <div class="social-links d-flex gap-3">
+                        <a href="https://instagram.com" target="_blank" class="text-white h4" title="Instagram"><i
+                                class="bi bi-instagram"></i></a>
+                        <a href="https://twitter.com" target="_blank" class="text-white h4" title="Twitter"><i
+                                class="bi bi-twitter-x"></i></a>
+                        <a href="https://facebook.com" target="_blank" class="text-white h4" title="Facebook"><i
+                                class="bi bi-facebook"></i></a>
+                    </div>
                 </div>
-                <div class="col-lg-4 text-center">
+                <div class="col-lg-2 col-md-6">
                     <h5 class="fw-bold mb-3">Navegación</h5>
                     <ul class="list-unstyled">
-                        <li><a href="../../index.html" class="text-secondary text-decoration-none">Inicio</a></li>
-                        <li><a href="../shop/shop.html" class="text-secondary text-decoration-none">Tienda</a>
+                        <li><a href="index.html" class="text-secondary text-decoration-none" title="Inicio">Inicio</a>
                         </li>
-                        <li><a href="../news/news.html" class="text-secondary text-decoration-none">Novedades</a>
+                        <li><a href="shop.html" class="text-secondary text-decoration-none" title="Tienda">Tienda</a>
                         </li>
+                        <li><a href="../news/news.html" class="text-secondary text-decoration-none"
+                                title="Novedades">Novedades</a>
+                        </li>
+                        <li><a href="../policy.html" class="text-secondary text-decoration-none"
+                                title="Política de Privacidad">Política de
+                                Privacidad</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="fw-bold mb-3">Soporte</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../contacto.html#envios" class="text-secondary text-decoration-none"
+                                title="Envíos y Devoluciones">Envíos y
+                                Devoluciones</a></li>
+                        <li><a href="../contacto.html#faq" class="text-secondary text-decoration-none"
+                                title="Preguntas Frecuentes">Preguntas
+                                Frecuentes</a></li>
+                        <li><a href="../contacto.html#contact" class="text-secondary text-decoration-none"
+                                title="Contacto">Contacto</a>
+                        </li>
+                        <li><a href="../contacto.html#tiendas" class="text-secondary text-decoration-none"
+                                title="Nuestras Tiendas">Nuestras
+                                tiendas</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
                     <h5 class="fw-bold mb-3">Suscríbete</h5>
+                    <p class="text-secondary">Recibe ofertas exclusivas y novedades.</p>
                     <form class="d-flex gap-2">
                         <input type="email" class="form-control rounded-pill" placeholder="Tu email">
                         <button class="btn btn-danger rounded-circle"><i class="bi bi-send"></i></button>
                     </form>
                 </div>
             </div>
+
             <hr class="my-4 border-secondary">
-            <div class="text-center text-secondary small">© 2026 SportShop.</div>
+
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <span class="text-secondary small">© <span id="current-year"></span> Sport Shop. Todos los derechos
+                        reservados.</span>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <span class="text-secondary small">Diseñado por
+                        <a href="https://www.linkedin.com/in/jmesquerdo/" target="_blank"
+                            class="text-danger text-decoration-none fw-bold" title="LinkedIn de Jessica Martínez">
+                            Jessica Martínez <i class="bi bi-linkedin ms-1"></i>
+                        </a>
+                    </span>
+                </div>
+            </div>
+
         </div>
     </footer>
 
-
-    <!-- scripts -->
+    <!-- Librerías JS -->
     <script src="../../js/bootsrap/bootstrap.bundle.min.js"></script>
     <script src="../../js/aos/aos.js"></script>
     <script src="../../js/glightbox/glightbox.min.js"></script>
+
+    <!-- JS COMUNES -->
     <script src="../../js/main.js"></script>
-    <script src="../../js/form.js"></script>
+
+    <!-- JS Específico de la Página -->
+    <script src="../../js/shop.js"></script>
 </body>
 
 </html>
