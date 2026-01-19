@@ -7,17 +7,17 @@ Estas son las tareas pendientes en el desarrollo:
 - Mapa de la estructura del desarrollo
 - Crear niveles
   - Nivel 0 - Index ✅
-  - Nivel 1 - Tienda ⬜
+  - Nivel 1 - Tienda ✅
   - Nivel 1 - Noticias ✅
   - Nivel 1 - Contacto ✅
-  - Nivel 2 - Detalle de producto ⬜
+  - Nivel 2 - Detalle de producto ✅
   - Nivel 2 - Noticias por categoría ✅
 - Formulario con al menos 5 tipos de componentes diferentes (cajas de
 texto, radio buon, listas desplegables, etc…) ✅
 - Tablas ✅
 - Imágenes ✅
-- Audio ⬜
-- Videos ⬜
+- Audio ✅
+- Videos ✅
 - Enlaces a páginas internas (de nuestro propio sitio Web) y páginas
 externas (de otras direcciones ajenas a la nuestra) ✅
 - iFrames ✅

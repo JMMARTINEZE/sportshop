@@ -19,5 +19,7 @@
     --shadow-standard: 0 2px 10px rgba(0,0,0,0.05);
     --shadow-header: 0 4px 15px rgba(0, 0, 0, 0.3);
     --shadow-product: 0 15px 30px rgba(0, 0, 0, 0.1);
-    --border-radius-lg: 1rem; /* Para los rounded-4 de Bootstrap */
+    --border-radius-lg: 1rem;     /* Para contenedores grandes */
+    --border-radius: 0.75rem;    /* Para tarjetas y componentes estándar */
+    --border-radius-sm: 0.4rem;  /* Para botones pequeños */
 }

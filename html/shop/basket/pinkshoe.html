@@ -18,13 +18,14 @@
     <link href="../../../css/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
     <link href="../../../css/aos/aos.css" rel="stylesheet">
     <link href="../../../css/glightbox/glightbox.min.css" rel="stylesheet">
+    <link href="../../../css/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- CSS Comunes -->
     <link href="../../../css/variables.css" rel="stylesheet">
     <link href="../../../css/common.css" rel="stylesheet">
 
     <!-- CSS Específico de la Página -->
-    <link href="../../../css/shop.css" rel="stylesheet">
+    <link href="../../../css/product-detail.css" rel="stylesheet">
 </head>
 
 <body class="nohero-page">
@@ -67,54 +68,63 @@
         <section class="product-detail py-5">
             <div class="container-xl">
                 <div class="row g-5">
-
                     <div class="col-lg-6" data-aos="fade-up">
                         <div class="product-gallery">
-                            <a href="../../../img/basket/zapatillas/01/pinkshoes.png"
-                                class="glightbox main-img-container d-block border rounded-4 overflow-hidden mb-3"
-                                data-gallery="product-gallery">
-                                <img src="../../../img/basket/zapatillas/01/pinkshoes.png" class="img-fluid w-100"
-                                    alt="Zapatillas Pro Court">
-                            </a>
-                            <div class="row g-2">
-                                <div class="col-3">
-                                    <a href="../../../img/basket/zapatillas/01/pink-side.png"
-                                        class="glightbox border rounded-3 d-block overflow-hidden"
-                                        data-gallery="product-gallery">
-                                        <img src="../../../img/basket/zapatillas/01/pink-side.png" class="img-fluid"
-                                            alt="Vista lateral">
-                                    </a>
+                            <div class="swiper main-swiper border rounded-4 overflow-hidden mb-3">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <a href="../../../img/basket/zapatillas/01/pinkshoes.png" class="glightbox">
+                                            <img src="../../../img/basket/zapatillas/01/pinkshoes.png"
+                                                class="img-fluid">
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="../../../img/basket/zapatillas/01/pink-side.png" class="glightbox">
+                                            <img src="../../../img/basket/zapatillas/01/pink-side.png"
+                                                class="img-fluid">
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="../../../img/basket/zapatillas/01/pink-sole.png" class="glightbox">
+                                            <img src="../../../img/basket/zapatillas/01/pink-sole.png"
+                                                class="img-fluid">
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="col-3">
-                                    <a href="../../../img/basket/zapatillas/01/pink-sole.png"
-                                        class="glightbox border rounded-3 d-block overflow-hidden"
-                                        data-gallery="product-gallery">
-                                        <img src="../../../img/basket/zapatillas/01/pink-sole.png" class="img-fluid"
-                                            alt="Vista suela">
-                                    </a>
+                            </div>
+
+                            <div thumbsslider="" class="swiper thumb-swiper mb-4">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><img src="../../../img/basket/zapatillas/01/pinkshoes.png"
+                                            class="img-fluid rounded border"></div>
+                                    <div class="swiper-slide"><img src="../../../img/basket/zapatillas/01/pink-side.png"
+                                            class="img-fluid rounded border"></div>
+                                    <div class="swiper-slide"><img src="../../../img/basket/zapatillas/01/pink-sole.png"
+                                            class="img-fluid rounded border"></div>
                                 </div>
+                            </div>
+
+                            <div class="product-audio-section">
+                                <button type="button" class="btn-audio-mini" id="btnPlaySound">
+                                    <div class="audio-content">
+                                        <i class="bi bi-play-circle-fill"></i>
+                                        <div class="text-group">
+                                            <span class="label">Audio Tech</span>
+                                            <div class="sound-wave">
+                                                <span></span><span></span><span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                                <audio id="productSound" src="../../../audios/running-on-concrete-393095.mp3"></audio>
                             </div>
                         </div>
                     </div>
-
                     <div class="col-lg-6" data-aos="fade-left">
                         <div class="ps-lg-4">
                             <span class="badge bg-danger mb-2">NBA Series</span>
                             <h1 class="fw-bold display-5 mb-2">Zapatillas Pro Court</h1>
-
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="text-warning me-2">
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-half"></i>
-                                </div>
-                                <span class="small text-muted">(4.5/5 basado en 28 opiniones)</span>
-                            </div>
-
                             <h2 class="text-danger fw-bold mb-4">120,00€</h2>
-
                             <p class="text-secondary mb-4">
                                 Domina la pista con la tecnología de amortiguación reactiva. Diseñadas para jugadores
                                 explosivos
@@ -185,7 +195,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row mt-5 pt-5 border-top">
                     <div class="col-lg-8 mx-auto">
                         <h3 class="fw-bold mb-4">Opiniones de la comunidad</h3>
@@ -193,7 +202,8 @@
                         <div class="review-item mb-4 pb-4 border-bottom">
                             <div class="d-flex justify-content-between mb-2">
                                 <h6 class="fw-bold mb-0">Carlos M. <span
-                                        class="badge bg-success-subtle text-success ms-2 small">Compra verificada</span>
+                                        class="badge bg-success-subtle text-success ms-2 small">Compra
+                                        verificada</span>
                                 </h6>
                                 <div class="text-warning small">
                                     <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
@@ -205,9 +215,9 @@
                                 amortiguación sigue como el primer día. Totalmente recomendadas."</p>
                             <span class="text-muted smaller">Publicado el 12 de Enero, 2026</span>
                         </div>
+
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -299,13 +309,16 @@
     <!-- Librerías JS -->
     <script src="../../../js/bootsrap/bootstrap.bundle.min.js"></script>
     <script src="../../../js/aos/aos.js"></script>
+    <script src="../../../js/swiper/swiper-bundle.min.js"></script>
     <script src="../../../js/glightbox/glightbox.min.js"></script>
+
 
     <!-- JS COMUNES -->
     <script src="../../../js/main.js"></script>
-    <!-- JS Específico de la Página -->
 
-    <script src="../../../js/product-detaill.js"></script>
+    <!-- JS Específico de la Página -->
+    <script src="../../../js/product-detail.js"></script>
+
 </body>
 
 </html>
