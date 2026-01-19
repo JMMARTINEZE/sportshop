@@ -63,6 +63,9 @@ Todo el contenido utilizado en este proyecto procede de fuentes gratuitas y de l
 Los textos de las noticias han sido generados mediante inteligencia artificial con fines exclusivamente educativos, y las imágenes se han obtenido de bancos de recursos gratuitos, concretamente:
 - https://unsplash.com/
 - https://www.vecteezy.com/
+- https://freesound.org/
+- https://pixabay.com/
+- https://www.pexels.com/
 
 Es importante señalar que este proyecto no pretende reflejar información deportiva real. Los contenidos se han creado únicamente para simular una tienda deportiva y practicar el diseño y la estructura de una web.
 
