@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fuentes/roboto-v50-latin_symbols-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fuentes/roboto-v50-latin_symbols-700.woff2') format('woff2');
+}
+
 :root {
     /* Colores Marca */
     --accent-color: #dc3545;       /* Rojo SportShop */
