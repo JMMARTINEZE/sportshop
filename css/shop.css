@@ -1,0 +1,161 @@
+/*--------------------------------------------------------------
+# COMPONENTE: BUSCADOR 
+--------------------------------------------------------------*/
+.input-group .form-control:focus {
+    border-color: transparent;
+    box-shadow: none;
+    outline: 0;
+}
+
+.input-group:focus-within {
+    border-color: var(--accent-color) !important;
+    /* Usamos la variable accent-soft para el brillo del buscador */
+    box-shadow: 0 0 0 0.25rem var(--accent-soft) !important;
+}
+
+.input-group:focus-within .input-group-text,
+.input-group:focus-within .form-control {
+    border-color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# COMPONENTE: TARJETA DE PRODUCTO
+--------------------------------------------------------------*/
+.product-item article {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid transparent;
+}
+
+.product-item article:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-product);
+    border-color: var(--accent-soft);
+}
+
+/* Contenedor de imagen (Header de la tarjeta) */
+.product-item header {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: var(--light-gray); /* Fondo neutro para resaltar la imagen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.product-item .card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 25px;
+    transition: transform 0.5s ease;
+}
+
+/*--------------------------------------------------------------
+# COMPONENTE: BADGES (ETIQUETAS)
+--------------------------------------------------------------*/
+.product-item header .badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 10;
+    margin: 0 !important;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    /* Degradado usando las variables de marca */
+    background: linear-gradient(45deg, var(--accent-color), var(--accent-hover));
+    box-shadow: 0 4px 8px var(--accent-soft);
+}
+
+/*--------------------------------------------------------------
+# COMPONENTE: FILTROS LATERALES (ASIDE)
+--------------------------------------------------------------*/
+.filter-item {
+    position: relative;
+    padding-left: 15px !important;
+    transition: all 0.2s ease;
+    color: var(--text-muted);
+    border: none;
+    background: none;
+}
+
+.filter-item:hover {
+    color: var(--accent-color) !important;
+}
+
+.filter-item.active {
+    padding-left: 25px !important;
+    color: var(--accent-color) !important;
+    font-weight: bold;
+}
+
+.filter-item.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 16px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+aside h6 {
+    color: var(--dark-color);
+    letter-spacing: 0.5px;
+}
+
+/*--------------------------------------------------------------
+# BOTONES DE ACCIÓN (CARD FOOTER)
+--------------------------------------------------------------*/
+.product-item footer .btn-outline-dark {
+    border-color: var(--dark-color);
+    color: var(--dark-color);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.product-item footer .btn-outline-dark:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--white);
+    transform: scale(1.02); /* Pequeño pulso de crecimiento */
+    box-shadow: 0 4px 12px var(--accent-soft);
+}
+
+.btn-clear-filters {
+    transition: all 0.3s ease;
+}
+
+.btn-clear-filters:hover {
+    background-color: var(--accent-hover) !important;
+    transform: translateY(-2px);
+}
+
+/*--------------------------------------------------------------
+# COMPONENTE: SELECTOR DE ORDENACIÓN
+--------------------------------------------------------------*/
+#sortSelect {
+    border-color: var(--light-gray);
+    color: var(--text-muted);
+    font-family: var(--main-font);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#sortSelect:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.25rem var(--accent-soft);
+    outline: 0;
+}
+
+#sortSelect option {
+    color: var(--dark-color);
+}
