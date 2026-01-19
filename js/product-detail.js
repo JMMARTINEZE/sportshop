@@ -1,6 +1,6 @@
 /**
  * SportShop JS - Product Detail
- * Control de interacciones en la página de producto.
+ * Control unificado de interacciones.
  */
 (function() {
     "use strict";
@@ -26,7 +26,6 @@
             input.value = value + 1;
         });
 
-        // Evitar que el usuario escriba letras o números negativos manualmente
         input.addEventListener('change', () => {
             if (isNaN(input.value) || input.value < 1) {
                 input.value = 1;
@@ -35,7 +34,7 @@
     }
 
     /*--------------------------------------------------------------
-    # 2. SELECCIÓN DE TALLAS (Log)
+    # 2. SELECCIÓN DE TALLAS
     --------------------------------------------------------------*/
     function initSizeSelector() {
         const sizeInputs = document.querySelectorAll('input[name="size"]');
@@ -48,41 +47,66 @@
     }
 
     /*--------------------------------------------------------------
-    # 3. INTERCAMBIO DE IMAGEN PRINCIPAL
+    # 3. CONTROL DE AUDIO
     --------------------------------------------------------------*/
-    function initGallerySwitcher() {
-        const mainImg = document.querySelector('.main-img-container img');
-        const mainLink = document.querySelector('.main-img-container');
-        const thumbnails = document.querySelectorAll('.product-gallery .row .glightbox');
+    function initProductAudio() {
+        const btn = document.getElementById('btnPlaySound');
+        const audio = document.getElementById('productSound');
 
-        if (!mainImg || thumbnails.length === 0) return;
+        if (btn && audio) {
+            btn.addEventListener('click', () => {
+                audio.currentTime = 0;
+                audio.play();
+                btn.classList.add('playing');
 
-        thumbnails.forEach(thumb => {
-            thumb.addEventListener('click', function(e) {
-                // Solo cambiamos la imagen si el usuario hace click, 
-                // pero dejamos que GLightbox se encargue del zoom.
-                const newSrc = this.querySelector('img').src;
-                const newHref = this.getAttribute('href');
-
-                // Pequeño efecto de transición suave
-                mainImg.style.opacity = '0';
-                
-                setTimeout(() => {
-                    mainImg.src = newSrc;
-                    mainLink.setAttribute('href', newHref);
-                    mainImg.style.opacity = '1';
-                }, 200);
+                audio.onended = () => {
+                    btn.classList.remove('playing');
+                };
             });
+        }
+    }
+
+    /*--------------------------------------------------------------
+    # 4. GALERÍA SINCRONIZADA (SWIPER + GLIGHTBOX)
+    --------------------------------------------------------------*/
+    function initProductGallery() {
+        // Validamos que existan los contenedores para evitar errores en consola
+        if (!document.querySelector('.thumb-swiper')) return;
+
+        // 1. Inicializar miniaturas
+        const swiperThumbs = new Swiper(".thumb-swiper", {
+            spaceBetween: 10,
+            slidesPerView: 3,
+            freeMode: true,
+            watchSlidesProgress: true,
+        });
+
+        // 2. Inicializar principal vinculado a miniaturas
+        const swiperMain = new Swiper(".main-swiper", {
+            spaceBetween: 10,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            thumbs: {
+                swiper: swiperThumbs,
+            },
+        });
+
+        // 3. Inicializar Glightbox
+        const lightbox = GLightbox({
+            selector: '.glightbox'
         });
     }
 
     /*--------------------------------------------------------------
-    # 4. LANZADOR GLOBAL
+    # 5. LANZADOR GLOBAL
     --------------------------------------------------------------*/
     document.addEventListener('DOMContentLoaded', () => {
         initQuantitySelector();
         initSizeSelector();
-        initGallerySwitcher();
+        initProductAudio();
+        initProductGallery(); // Swiper y Glightbox juntos
     });
 
 })();

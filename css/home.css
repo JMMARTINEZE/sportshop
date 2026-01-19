@@ -1,21 +1,35 @@
 /*--------------------------------------------------------------
 # SECCIÓN SPORTSHOP (HERO)
 --------------------------------------------------------------*/
-
 .sportshop {
     position: relative;
     overflow: hidden;
+    color: var(--white);
 }
 
+/* El video debe estar al fondo del todo */
+.hero-video {
+    z-index: 1;
+    pointer-events: none; /* Crítico para que funcionen los enlaces */
+    object-fit: cover;
+}
+
+/* Overlay con degradado */
 .sportshop .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: 2;
-    background-color: #000; /* Negro puro para el overlay del video/imagen */
-    opacity: 0.5;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%);
+ 
 }
 
+/* El contenido (Texto y Redes) arriba */
 .sportshop .container {
-    z-index: 3;
     position: relative;
+    z-index: 3;
 }
 
 /*--------------------------------------------------------------
@@ -131,13 +145,13 @@
     height: 350px; /* Altura fija para que todas sean iguales */
     position: relative;
     overflow: hidden;
-    border-radius: var(--border-radius); /* Usando tu variable */
+    border-radius: var(--border-radius);
 }
 
 .frontshop-card img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* CLAVE: Ajusta la imagen al contenedor sin deformar */
+    object-fit: cover; /* Ajusta la imagen al contenedor sin deformar */
     transition: 0.5s ease;
 }
 
@@ -145,7 +159,6 @@
 .frontshop-overlay {
     position: absolute;
     inset: 0;
-    /* Degradado para que el texto siempre sea legible */
     background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%);
     display: flex;
     flex-direction: column;
@@ -164,7 +177,7 @@
 }
 
 .frontshop-overlay .price {
-    color: var(--accent-color); /* El precio en tu rojo corporativo */
+    color: var(--accent-color);
     font-weight: 700;
     font-size: 1.1rem;
 }
@@ -196,7 +209,7 @@
     font-weight: 800;
 }
 
-/* Botón blanco del CTA - Actualizado para ser flexible */
+/* Botón blanco del CTA */
 .frontshop .cta-box .cta-btn {
     display: inline-block; /* Permite que el botón respete paddings */
     background: var(--white);
