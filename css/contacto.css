@@ -1,5 +1,13 @@
+/**
+ * SportShop CSS - Versión 3.0.0
+ * Autor: Jessica Martínez Esquerdo
+ * Fecha: 2026-01-20
+ * Url: https://www.linkedin.com/in/jmesquerdo/
+ * CSS para la página de contacto
+ */
+
 /*--------------------------------------------------------------
-# SECCIÓN DE CONTACTO
+# 1. SECCIÓN DE CONTACTO
 --------------------------------------------------------------*/
 
 /* Bloques de Información (Izquierda) */
@@ -132,7 +140,7 @@
 }
 
 /*--------------------------------------------------------------
-# SECCIÓN TIENDAS
+# 2. SECCIÓN TIENDAS
 --------------------------------------------------------------*/
 
 .tiendas .table-responsive {

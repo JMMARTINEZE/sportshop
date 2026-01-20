@@ -1,3 +1,11 @@
+/**
+ * SportShop CSS - Versión 3.0.0
+ * Autor: Jessica Martínez Esquerdo
+ * Fecha: 2026-01-20
+ * Url: https://www.linkedin.com/in/jmesquerdo/
+ * CSS común para toda la aplicación
+ */
+
 /*--------------------------------------------------------------
 # 1. ESTILOS GLOBALES Y ELEMENTOS BASE
 --------------------------------------------------------------*/
@@ -59,6 +67,7 @@ main {
 .nohero-page main {
     padding-top: 70px; /* Compensa la altura del header fijo */
     min-height: 80vh;
+    background-color: var(--white); /* Fondo base uniforme */
 }
 
 @media (max-width: 991px) {
@@ -142,17 +151,90 @@ main {
     color: var(--white);
 }
 
-.footer-global h5, 
-.footer-global h2 {
+/* Títulos no heredados */
+.footer-global h2, 
+.footer-global h5 {
     color: var(--white);
 }
 
-.footer-global .list-unstyled a:hover {
-    color: var(--accent-color) !important;
+/* Enlaces */
+.footer-global a {
+    transition: all 0.3s ease;
 }
 
+/* Estilo específico para las listas (Navegación y Soporte) */
+.footer-global .sidebar-list li a {
+    color: var(--text-on-dark);
+    text-decoration: none;
+    padding: 4px 0;
+}
+
+.footer-global .sidebar-list li a:hover {
+    color: var(--white) !important;
+    padding-left: 8px; /* Movimiento ligero del icono */
+}
+
+/* Formulario de suscripción */
 .footer-global .form-control {
     background-color: var(--header-dark);
     color: var(--white);
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+.footer-global .form-control::placeholder {
+    color: var(--text-on-dark);
+    opacity: 0.7;
+}
+
+/*--------------------------------------------------------------
+# 5. ESTILOS DE TEXTO E INFORMACIÓN
+--------------------------------------------------------------*/
+
+/* Clase unificada para títulos con subrayado de marca */
+.sidebar-title-underline, 
+.content-title-underline {
+    position: relative;
+    padding-bottom: 12px;
+    margin-bottom: 1.5rem;
+    display: block; /* Asegura que ocupe el ancho para posicionar el after */
+}
+
+.sidebar-title-underline::after, 
+.content-title-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px; /* Grosor unificado de 3px */
+    background-color: var(--accent-color);
+    border-radius: var(--border-radius-sm);
+}
+
+/* Listas unificadas para Sidebars y Menús laterales */
+.sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-list li a {
+    transition: all 0.3s ease;
+    color: var(--text-muted);
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 0;
+}
+
+.sidebar-list li a:hover {
+    color: var(--accent-color) !important;
+    padding-left: 8px;
+}
+
+/* Párrafos estándar de lectura (Cuerpo de texto) */
+.text-reading {
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+

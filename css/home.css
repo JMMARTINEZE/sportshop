@@ -1,5 +1,13 @@
+/**
+ * SportShop CSS - Versión 3.0.0
+ * Autor: Jessica Martínez Esquerdo
+ * Fecha: 2026-01-20
+ * Url: https://www.linkedin.com/in/jmesquerdo/
+ * CSS para la página de inicio
+ */
+
 /*--------------------------------------------------------------
-# SECCIÓN SPORTSHOP (HERO)
+# 1. SECCIÓN SPORTSHOP (HERO)
 --------------------------------------------------------------*/
 .sportshop {
     position: relative;
@@ -33,7 +41,7 @@
 }
 
 /*--------------------------------------------------------------
-# SECCIÓN: CATEGORÍAS DE NOTICIAS (#categories)
+# 2. SECCIÓN: CATEGORÍAS DE NOTICIAS (#categories)
 --------------------------------------------------------------*/
 
 #categories {
@@ -43,7 +51,7 @@
 }
 
 /*--------------------------------------------------------------
-# COMPONENTE: TARJETA DE NOTICIA (.category-item)
+# 3. COMPONENTE: TARJETA DE NOTICIA (.category-item)
 --------------------------------------------------------------*/
 
 .category-item {
@@ -58,7 +66,7 @@
     overflow: hidden;
 }
 
-/* Línea superior roja con variable */
+/* Línea superior roja bajo texto */
 .category-item::before {
     content: "";
     position: absolute;
@@ -72,7 +80,7 @@
     transition: transform 0.4s ease;
 }
 
-/* Contenedor del Icono usando la variable soft */
+/* Contenedor del Icono */
 .category-item .icon-box {
     width: 75px;
     height: 75px;
@@ -109,7 +117,7 @@
 }
 
 /*--------------------------------------------------------------
-# SECCIÓN: TIENDA FRONTAL (#frontshop)
+# 4. SECCIÓN: TIENDA FRONTAL (#frontshop)
 --------------------------------------------------------------*/
 
 .frontshop {
@@ -119,7 +127,7 @@
 }
 
 /*--------------------------------------------------------------
-# COMPONENTE: FILTROS DE TIENDA (.frontshop-filters)
+# 5.COMPONENTE: FILTROS DE TIENDA (.frontshop-filters)
 --------------------------------------------------------------*/
 
 .frontshop-filters li {
@@ -138,7 +146,7 @@
 }
 
 /*--------------------------------------------------------------
-# COMPONENTE: TARJETA DE PRODUCTO (.frontshop-card)
+# 6. COMPONENTE: TARJETA DE PRODUCTO (.frontshop-card)
 --------------------------------------------------------------*/
 
 .frontshop-card {
@@ -155,7 +163,7 @@
     transition: 0.5s ease;
 }
 
-/* 2. Capa de Información (Overlay) */
+/* Capa de Información (Overlay) */
 .frontshop-overlay {
     position: absolute;
     inset: 0;
@@ -169,7 +177,7 @@
     z-index: 2;
 }
 
-/* 3. Textos dentro del Overlay */
+/* Textos dentro del Overlay */
 .frontshop-overlay h4 {
     color: var(--white);
     font-weight: 700;
@@ -182,7 +190,7 @@
     font-size: 1.1rem;
 }
 
-/* 4. Efectos de Interacción (Hover) */
+/* Efectos de Interacción (Hover) */
 .frontshop-card:hover .frontshop-overlay {
     opacity: 1; /* Aparece el texto al pasar el ratón */
 }
@@ -192,7 +200,7 @@
 }
 
 /*--------------------------------------------------------------
-# SECCIÓN: LLAMADA A LA ACCIÓN (CTA)
+# 7. SECCIÓN: LLAMADA A LA ACCIÓN (CTA)
 --------------------------------------------------------------*/
 
 .frontshop .cta-box {
@@ -221,7 +229,7 @@
     text-transform: uppercase;
     transition: all 0.3s ease;
     
-    /* SEGURIDAD PARA MÓVILES */
+    /* SEGURIDAD PARA MÓVILES (Revisado en móvil con pantalla pequeña) */
     max-width: 100%;      /* No deja que el botón sea más ancho que la caja */
     white-space: normal;  /* Si el texto es muy largo, salta de línea en vez de romperse */
     text-align: center;

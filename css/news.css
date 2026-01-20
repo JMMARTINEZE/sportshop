@@ -1,54 +1,49 @@
-/* News Card Styles */
+/**
+ * SportShop CSS - Versión 3.0.0
+ * Autor: Jessica Martínez Esquerdo
+ * Fecha: 2026-01-20
+ * Url: https://www.linkedin.com/in/jmesquerdo/
+ * CSS para el sistema de noticias y artículos (Blog)
+ */
+
+/*--------------------------------------------------------------
+# 1. TARJETAS DE NOTICIAS (NEWS CARDS)
+--------------------------------------------------------------*/
 .news-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Asegura que el zoom de la imagen no desborde */
 }
 
 .news-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+    box-shadow: var(--shadow-product) !important;
+}
+
+/* Contenedor y Efecto de Imagen */
+.news-img-container {
+    overflow: hidden;
 }
 
 .news-img-container img {
     transition: transform 0.5s ease;
+    object-fit: cover;
 }
 
 .news-card:hover .news-img-container img {
     transform: scale(1.05);
 }
 
-/* Sidebar Styling */
-.sidebar .sidebar-item h4::after {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 2px;
-    background: var(--accent-color);
-    margin-top: -1px;
-}
-
-.sidebar ul li a {
-    transition: color 0.3s ease, padding-left 0.3s ease;
-}
-
-.sidebar ul li a:hover {
-    color: var(--accent-color) !important;
-    padding-left: 8px;
-}
-
-/* Badge personalizado */
+/* Badge y Etiquetas */
 .badge {
     font-weight: 500;
     padding: 0.5em 1em;
+    border-radius: var(--border-radius-sm);
 }
 
-@media (max-width: 767px) {
-    .news-card {
-        flex-direction: column; /* En móvil, imagen arriba, texto abajo */
-    }
-    .news-img-container {
-        height: 200px;
-    }
-}
+/*--------------------------------------------------------------
+# 2. BARRA LATERAL (SIDEBAR)
+--------------------------------------------------------------*/
+/* Filtros de Categorías */
 .filter-item {
     color: var(--dark-color);
     transition: all 0.3s ease;
@@ -61,40 +56,60 @@
     padding-left: 5px;
 }
 
-/* Evitar que el aside se pegue al borde en móviles */
-@media (max-width: 991px) {
-    aside {
-        order: 2; /* El aside pasa abajo en móvil para dar prioridad a las noticias */
-    }
-}
-
 /*--------------------------------------------------------------
-# Artículos de Noticias
---------------------------------------------------------------*/    
+# 3. CUERPO DEL ARTÍCULO (SINGLE POST)
+--------------------------------------------------------------*/
 .article-body {
-    line-height: 1.8; /* Más espacio entre líneas */
-    color: #333;
+    line-height: 1.8;
+    color: var(--dark-color);
 }
 
 .article-body h2 {
     padding-top: 1rem;
+    font-weight: 700;
 }
 
 .article-body p {
     margin-bottom: 1.5rem;
 }
 
-/* Efecto para los breadcrumbs */
-.breadcrumb-item + .breadcrumb-item::before {
-    content: "•";
-    color: #dc3545;
-}
-
-/* Estilo para las imágenes dentro del artículo */
+/* Imágenes dentro del contenido */
 .news-article img {
+    border-radius: var(--border-radius);
     transition: transform 0.3s ease;
 }
 
 .news-article img:hover {
     transform: scale(1.01);
+}
+
+/*--------------------------------------------------------------
+# 4. ELEMENTOS DE NAVEGACIÓN (BREADCRUMBS)
+--------------------------------------------------------------*/
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "•";
+    color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# 5. AJUSTES RESPONSIVE (MEDIA QUERIES)
+--------------------------------------------------------------*/
+/* Dispositivos Medianos (Tablets y móviles grandes) */
+@media (max-width: 991px) {
+    aside {
+        order: 2; /* El aside pasa abajo para priorizar la lectura de noticias */
+        margin-top: 3rem;
+    }
+}
+
+/* Dispositivos Pequeños (Móviles) */
+@media (max-width: 767px) {
+    .news-card {
+        flex-direction: column; 
+    }
+    
+    .news-img-container {
+        height: 200px;
+        width: 100%;
+    }
 }
