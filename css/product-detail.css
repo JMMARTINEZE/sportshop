@@ -1,259 +1,146 @@
+/**
+ * SportShop CSS - Versión 3.0.0
+ * Autor: Jessica Martínez Esquerdo
+ * Fecha: 2026-01-20
+ * Url: https://www.linkedin.com/in/jmesquerdo/
+ * CSS para la página de detalle de producto
+ */
+
 /*--------------------------------------------------------------
-# 1. GALERÍA DE PRODUCTO
+# 1. GALERÍA Y SWIPER (UNIFICADO)
 --------------------------------------------------------------*/
-.main-img-container {
+.main-img-container, .main-swiper {
     background-color: var(--light-gray);
-    transition: transform 0.4s ease;
-    border: 1px solid #dee2e6;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(0,0,0,0.08);
     overflow: hidden;
+    aspect-ratio: 1 / 1;
 }
 
-.main-img-container:hover {
-    cursor: zoom-in;
-}
-
-.main-img-container img {
+.main-swiper .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Mantiene proporción de la zapatilla */
+    padding: 2rem;
     transition: transform 0.5s ease;
 }
 
-.main-img-container:hover img {
-    transform: scale(1.05);
+.main-swiper .swiper-slide:hover img {
+    transform: scale(1.08);
+    cursor: zoom-in;
 }
 
-.product-gallery .glightbox.border {
+/* Miniaturas */
+.thumb-swiper .swiper-slide {
+    aspect-ratio: 1 / 1;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    overflow: hidden;
+    cursor: pointer;
     transition: all 0.3s ease;
-    opacity: 0.7;
+    opacity: 0.6;
 }
 
-.product-gallery .glightbox.border:hover {
+.thumb-swiper .swiper-slide-thumb-active {
     opacity: 1;
-    border-color: var(--accent-color) !important;
+    border-color: var(--accent-color);
     box-shadow: var(--shadow-standard);
 }
 
 /*--------------------------------------------------------------
-# 2. SELECTOR DE TALLAS
+# 2. SELECTORES (TALLAS Y CANTIDAD)
 --------------------------------------------------------------*/
+/* Tallas */
 .btn-check + .btn-outline-dark {
-    border-color: #dee2e6;
+    border-color: var(--light-gray);
     color: var(--dark-color);
-    font-weight: 500;
     min-width: 55px;
     transition: all 0.2s ease;
-}
-
-.btn-check + .btn-outline-dark:hover {
-    border-color: var(--accent-color);
-    background-color: transparent;
-    color: var(--accent-color);
 }
 
 .btn-check:checked + .btn-outline-dark {
     background-color: var(--dark-color);
     border-color: var(--dark-color);
-    color: var(--white);
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow-standard);
 }
 
-/*--------------------------------------------------------------
-# 3. SELECTOR DE CANTIDAD
---------------------------------------------------------------*/
+/* Cantidad */
 .product-detail .input-group .btn {
-    border-color: #dee2e6;
+    border-color: var(--light-gray);
     background-color: var(--white);
-    color: var(--dark-color);
-}
-
-.product-detail .input-group .btn:hover {
-    background-color: var(--light-gray);
 }
 
 .product-detail .input-group .form-control {
+    border-left: none;
+    border-right: none;
+    border-color: var(--light-gray);
     font-weight: bold;
-    color: var(--dark-color);
-    border-left: none;
-    border-right: none;
 }
 
 /*--------------------------------------------------------------
-# 4. ACORDEONES
---------------------------------------------------------------*/
-.accordion-item {
-    border-left: none;
-    border-right: none;
-    border-radius: 0 !important;
-}
-
-.accordion-button:not(.collapsed) {
-    background-color: transparent;
-    color: var(--accent-color);
-    box-shadow: none;
-}
-
-.accordion-button:focus {
-    box-shadow: none;
-    border-color: rgba(0,0,0,.125);
-}
-
-.accordion-button::after {
-    filter: grayscale(1);
-}
-
-/*--------------------------------------------------------------
-# 5. SECCIÓN DE OPINIONES
---------------------------------------------------------------*/
-.review-item {
-    border-bottom: 1px solid var(--light-gray);
-    padding-bottom: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.review-item:last-child {
-    border-bottom: none;
-}
-
-.review-item .text-warning {
-    font-size: 0.85rem;
-}
-
-.badge.bg-success-subtle {
-    background-color: rgba(25, 135, 84, 0.1) !important;
-    color: #198754;
-    font-weight: 500;
-}
-
-/*--------------------------------------------------------------
-# 6. BOTÓN AÑADIR AL CARRITO
---------------------------------------------------------------*/
-.btn-danger.rounded-pill {
-    background-color: var(--accent-color);
-    border-color: var(--accent-color);
-    padding: 0.8rem 2rem;
-    transition: all 0.3s ease;
-    font-weight: 600;
-}
-
-.btn-danger.rounded-pill:hover {
-    background-color: var(--accent-hover);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px var(--accent-soft);
-}
-
-/*--------------------------------------------------------------
-# 7. BOTÓN DE AUDIO
+# 3. COMPONENTES DE AUDIO (BOTÓN MINIATURA)
 --------------------------------------------------------------*/
 .btn-audio-mini {
     width: 100%;
-    height: 65px; /* Ajusta para que coincida con la altura de tus miniaturas */
+    height: 100%; /* Se adapta al contenedor de miniatura */
     background: var(--light-gray);
-    border: 2px dashed #ccc;
+    border: 2px dashed rgba(0,0,0,0.1);
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
     transition: all 0.3s ease;
-    padding: 5px;
 }
 
-.btn-audio-mini:hover {
+.btn-audio-mini:hover, .btn-audio-mini.playing {
     background: var(--white);
-    border-color: var(--accent-color);
-    border-style: solid;
+    border: 2px solid var(--accent-color);
 }
 
-.audio-content {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.audio-content i {
-    font-size: 1.8rem;
-    color: var(--accent-color);
-}
-
-.text-group {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.text-group .label {
-    font-size: 0.7rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    color: var(--dark-color);
-}
-
-/* Ondas de sonido minimalistas */
-.sound-wave {
-    display: flex;
-    align-items: flex-end;
-    gap: 2px;
-    height: 8px;
-}
-
-.sound-wave span {
-    width: 2px;
-    height: 3px;
-    background: var(--accent-color);
-    opacity: 0.4;
-}
-
-/* Animación cuando suena */
-.btn-audio-mini.playing {
-    background: var(--white);
-    border-color: var(--accent-color);
-    border-style: solid;
-}
-
-.btn-audio-mini.playing span {
+.btn-audio-mini.playing .sound-wave span {
     animation: wave-mini 0.6s ease infinite;
     opacity: 1;
 }
 
 @keyframes wave-mini {
     0%, 100% { height: 3px; }
-    50% { height: 8px; }
+    50% { height: 10px; }
 }
 
 /*--------------------------------------------------------------
-# 8. SWIPER
+# 4. ACORDEONES (DESCRIPCIÓN Y DETALLES)
 --------------------------------------------------------------*/
-
-/* --- Imagen Principal --- */
-.main-swiper {
-    width: 100%;
-    /* Definimos un cuadrado perfecto */
-    aspect-ratio: 1 / 1; 
-    background-color: #f8f9fa; /* Fondo neutro por si la imagen es pequeña */
+.product-detail .accordion-item {
+    border-left: none;
+    border-right: none;
+    border-radius: 0 !important;
+    background: transparent;
 }
 
-.main-swiper .swiper-slide img {
-    width: 100%;
-    height: 100%;
-    /* La clave: rellena el espacio sin estirarse, recortando lo sobrante */
-    object-fit: contain; 
-    /* Si prefieres que llene todo el cuadro aunque recorte bordes, usa 'cover' */
-    padding: 20px; /* Espacio para que la zapatilla no toque los bordes */
+.product-detail .accordion-button:not(.collapsed) {
+    background-color: transparent;
+    color: var(--accent-color);
+    box-shadow: none;
 }
 
-/* --- Miniaturas --- */
-.thumb-swiper {
-    margin-top: 10px;
+.product-detail .accordion-button:focus {
+    box-shadow: none;
 }
 
-.thumb-swiper .swiper-slide {
-    aspect-ratio: 1 / 1; /* Miniaturas también cuadradas */
-    overflow: hidden;
-    border-radius: 8px;
-    cursor: pointer;
+/*--------------------------------------------------------------
+# 5. BOTÓN COMPRA PRINCIPAL
+--------------------------------------------------------------*/
+.btn-add-to-cart {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    padding: 1rem 2rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
 }
 
-.thumb-swiper .swiper-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Aquí 'cover' suele quedar mejor para ver el detalle */
+.btn-add-to-cart:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px var(--accent-soft);
 }
