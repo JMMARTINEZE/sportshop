@@ -1,0 +1,40 @@
+/* policy.css */
+
+/* Ajuste para que el contenido no quede pegado al header fijo */
+.nohero-page {
+    padding-top: 70px; /* Ajusta según la altura de tu navbar */
+}
+
+.policy-header h1 {
+    color: var(--dark-color);
+}
+
+.policy-content p {
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.policy-content h2 {
+    color: var(--dark-color);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Un detalle sutil: una línea roja bajo cada título */
+.policy-content h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: var(--border-radius-sm);
+}
+
+.list-group-item {
+    border-color: #eee;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
