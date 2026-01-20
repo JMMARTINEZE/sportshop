@@ -1,3 +1,11 @@
+/**
+ * SportShop CSS - Versión 3.0.0
+ * Autor: Jessica Martínez Esquerdo
+ * Fecha: 2026-01-20
+ * Url: https://www.linkedin.com/in/jmesquerdo/
+ * Variables CSS para toda la aplicación
+ */
+
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -25,6 +33,7 @@
     --dark-color: #212529;         /* Texto principal */
     --header-dark: #1a1d20;        /* Fondos de Header/Footer */
     --footer-black: #111111;
+    --text-on-dark: #adbac7; /* Un gris claro azulado muy usado en modo oscuro */
     
     /* Tipografía */
     --main-font: 'Roboto', sans-serif;

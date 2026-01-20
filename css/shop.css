@@ -1,83 +1,41 @@
+/**
+ * SportShop CSS - Versión 3.0.0
+ * Autor: Jessica Martínez Esquerdo
+ * Fecha: 2026-01-20
+ * Url: https://www.linkedin.com/in/jmesquerdo/
+ * CSS para la página de tienda (shop)
+ */
+
 /*--------------------------------------------------------------
-# COMPONENTE: BUSCADOR 
+# 1. BUSCADOR (SEARCH BAR)
 --------------------------------------------------------------*/
-.input-group .form-control:focus {
-    border-color: transparent;
-    box-shadow: none;
-    outline: 0;
+.shop-search .input-group {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid var(--light-gray);
 }
 
-.input-group:focus-within {
+.shop-search .input-group:focus-within {
     border-color: var(--accent-color) !important;
-    /* Usamos la variable accent-soft para el brillo del buscador */
     box-shadow: 0 0 0 0.25rem var(--accent-soft) !important;
 }
 
-.input-group:focus-within .input-group-text,
-.input-group:focus-within .form-control {
-    border-color: var(--accent-color);
+.shop-search .form-control {
+    border: none;
+    padding: 0.75rem 1rem;
+}
+
+.shop-search .form-control:focus {
+    box-shadow: none;
 }
 
 /*--------------------------------------------------------------
-# COMPONENTE: TARJETA DE PRODUCTO
---------------------------------------------------------------*/
-.product-item article {
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    border: 1px solid transparent;
-}
-
-.product-item article:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-product);
-    border-color: var(--accent-soft);
-}
-
-/* Contenedor de imagen (Header de la tarjeta) */
-.product-item header {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    background-color: var(--light-gray); /* Fondo neutro para resaltar la imagen */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.product-item .card-img-top {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    padding: 25px;
-    transition: transform 0.5s ease;
-}
-
-/*--------------------------------------------------------------
-# COMPONENTE: BADGES (ETIQUETAS)
---------------------------------------------------------------*/
-.product-item header .badge {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    z-index: 10;
-    margin: 0 !important;
-    padding: 6px 12px;
-    border-radius: 4px;
-    text-transform: uppercase;
-    font-size: 0.7rem;
-    letter-spacing: 1px;
-    font-weight: 600;
-    /* Degradado usando las variables de marca */
-    background: linear-gradient(45deg, var(--accent-color), var(--accent-hover));
-    box-shadow: 0 4px 8px var(--accent-soft);
-}
-
-/*--------------------------------------------------------------
-# COMPONENTE: FILTROS LATERALES (ASIDE)
+# 2. FILTROS LATERALES (ASIDE)
 --------------------------------------------------------------*/
 .filter-item {
     position: relative;
-    padding-left: 15px !important;
+    padding-left: 2% !important;
     transition: all 0.2s ease;
     color: var(--text-muted);
     border: none;
@@ -89,7 +47,7 @@
 }
 
 .filter-item.active {
-    padding-left: 25px !important;
+    padding-left: 5% !important;
     color: var(--accent-color) !important;
     font-weight: bold;
 }
@@ -112,50 +70,84 @@ aside h6 {
 }
 
 /*--------------------------------------------------------------
-# BOTONES DE ACCIÓN (CARD FOOTER)
+# 3. TARJETA DE PRODUCTO (REFACCIONADA)
 --------------------------------------------------------------*/
-.product-item footer .btn-outline-dark {
-    border-color: var(--dark-color);
-    color: var(--dark-color);
-    font-weight: 500;
-    transition: all 0.3s ease;
+.product-item article {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid var(--light-gray);
+    background: var(--white);
+    border-radius: var(--border-radius);
 }
 
-.product-item footer .btn-outline-dark:hover {
-    background-color: var(--accent-color);
+.product-item article:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-product);
     border-color: var(--accent-color);
+}
+
+/* Header de la tarjeta (Imagen) */
+.product-item header {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    background-color: var(--light-gray);
+    overflow: hidden;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.product-item .card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 1.5rem;
+    transition: transform 0.6s ease;
+}
+
+.product-item article:hover .card-img-top {
+    transform: scale(1.1) rotate(-3deg); /* Efecto dinámico deportivo */
+}
+
+/* Badge (Etiquetas) */
+.product-item .badge-status {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 5;
+    background: linear-gradient(45deg, var(--accent-color), var(--accent-hover));
     color: var(--white);
-    transform: scale(1.02); /* Pequeño pulso de crecimiento */
-    box-shadow: 0 4px 12px var(--accent-soft);
-}
-
-.btn-clear-filters {
-    transition: all 0.3s ease;
-}
-
-.btn-clear-filters:hover {
-    background-color: var(--accent-hover) !important;
-    transform: translateY(-2px);
+    padding: 0.5rem 0.8rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px var(--accent-soft);
 }
 
 /*--------------------------------------------------------------
-# COMPONENTE: SELECTOR DE ORDENACIÓN
+# 4. BOTONES Y SELECTORES
 --------------------------------------------------------------*/
-#sortSelect {
-    border-color: var(--light-gray);
-    color: var(--text-muted);
-    font-family: var(--main-font);
-    font-size: 0.9rem;
-    cursor: pointer;
+.btn-shop-action {
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    padding: 0.6rem;
     transition: all 0.3s ease;
+}
+
+.btn-shop-action:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--white);
+    box-shadow: 0 4px 12px var(--accent-soft);
+}
+
+#sortSelect {
+    border-radius: 8px;
+    border-color: var(--light-gray);
+    padding: 0.5rem;
+    font-size: 0.85rem;
 }
 
 #sortSelect:focus {
     border-color: var(--accent-color);
-    box-shadow: 0 0 0 0.25rem var(--accent-soft);
-    outline: 0;
-}
-
-#sortSelect option {
-    color: var(--dark-color);
+    box-shadow: 0 0 0 0.2rem var(--accent-soft);
 }

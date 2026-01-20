@@ -1,160 +1,125 @@
+/**
+ * SportShop CSS - Versión 3.0.0
+ * Autor: Jessica Martínez Esquerdo
+ * Fecha: 2026-01-20
+ * Url: https://www.linkedin.com/in/jmesquerdo/
+ * CSS para la página de Contacto
+ */
+
 /*--------------------------------------------------------------
-# SECCIÓN DE CONTACTO
+# 1. BLOQUES DE INFORMACIÓN (TARJETAS LATERALES)
 --------------------------------------------------------------*/
 
-/* Bloques de Información (Izquierda) */
-.contact .info-item {
+.info-item {
     background: var(--white);
-    padding: 30px;
+    padding: 1.5rem; /* Usando rem para consistencia */
     border-radius: var(--border-radius);
     border: 1px solid rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
     display: flex;
-    align-items: flex-start;
-    transition: 0.3s;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-.contact .info-item:hover {
+/* El Icon-Wrapper: Unificado para evitar el parpadeo de color */
+.info-item .icon-wrapper {
+    width: 50px;
+    height: 50px;
+    background-color: var(--accent-color); /* Rojo por defecto */
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.25rem;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-item .icon-wrapper i {
+    color: var(--white); /* Icono siempre blanco sobre el fondo rojo */
+    font-size: 1.5rem;
+    line-height: 0;
+}
+
+.info-item h3 {
+    color: var(--secondary-color);
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+/* --- EFECTO HOVER UNIFICADO --- */
+.info-item:hover {
     border-color: var(--accent-color);
     box-shadow: var(--shadow-standard);
     transform: translateY(-5px);
 }
 
-/* Iconos de Información */
-.contact .info-item .icon-wrapper {
-    width: 50px;
-    height: 50px;
-    background: var(--accent-soft);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 20px;
-    flex-shrink: 0;
-    transition: 0.3s;
-}
-
-.contact .info-item .icon-wrapper i {
-    color: var(--accent-color);
-    font-size: 24px;
-    transition: 0.3s;
-}
-
-.contact .info-item:hover .icon-wrapper {
-    background: var(--accent-color);
-}
-
-.contact .info-item:hover .icon-wrapper i {
-    color: var(--white);
-}
-
-/* Textos de Información */
-.contact .info-item h3 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 5px;
-    color: var(--header-dark);
-}
-
-.contact .info-item p {
-    margin: 0;
-    font-size: 14px;
-    color: var(--text-muted);
-}
-
-/* Formulario de Contacto (Derecha) */
-.contact .email-form {
-    background: var(--light-gray);
-    padding: 40px;
-    border-radius: var(--border-radius);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-/* Inputs, Select y Textarea */
-.contact .email-form .form-control,
-.contact .email-form .form-select {
-    color: var(--dark-color);
-    background-color: var(--white);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 12px 15px;
-    font-size: 14px;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-/* Estado Focus */
-.contact .email-form .form-control:focus,
-.contact .email-form .form-select:focus {
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 0.25rem var(--accent-soft);
-    outline: none;
-}
-
-/* Personalización de Radio y Checkbox */
-.contact .email-form .form-check-input:checked {
-    background-color: var(--accent-color);
-    border-color: var(--accent-color);
-}
-
-.contact .email-form .form-check-input:focus {
-    box-shadow: 0 0 0 0.25rem var(--accent-soft);
-}
-
-/* Botón de Envío */
-.contact .email-form button[type=submit] {
-    background: var(--accent-color);
-    color: var(--white);
-    border: none;
-    padding: 12px 40px;
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: 0.3s;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.contact .email-form button[type=submit]:hover {
-    background: var(--accent-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
-}
-
-/* Validación */
-.contact .invalid-feedback {
-    color: var(--accent-color);
-}
-
-.was-validated .form-control:invalid, 
-.was-validated .form-select:invalid {
-    border-color: var(--accent-color) !important;
+.info-item:hover .icon-wrapper {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(231, 76, 60, 0.4); /* Brillo rojo sutil */
 }
 
 /*--------------------------------------------------------------
-# SECCIÓN TIENDAS
+# 2. MAPA Y OTROS ELEMENTOS
 --------------------------------------------------------------*/
 
-.tiendas .table-responsive {
+.map-container {
     border-radius: var(--border-radius);
+    overflow: hidden;
+    line-height: 0;
     border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.map-container:hover {
+    box-shadow: var(--shadow-product);
+    border-color: var(--accent-color);
+}
+
+.map-container iframe {
+    width: 100%;
+    min-height: 400px;
+}
+
+/*--------------------------------------------------------------
+# 3. COMPONENTES DEL FORMULARIO (ESPECÍFICOS)
+--------------------------------------------------------------*/
+
+.email-form {
     background: var(--white);
-    padding: 15px;
-}
-
-.tiendas .table thead th {
-    background-color: var(--accent-color);
-    color: var(--white);
-}
-
-.tiendas .table tbody tr:hover {
-    background-color: var(--accent-soft);
-}
-
-.tiendas .map-container {
     border-radius: var(--border-radius);
 }
 
-.tiendas .map-container:hover {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+/* Ajuste para los radios y checks para que usen el rojo de la marca */
+.email-form .form-check-input:checked {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.email-form .form-control:focus, 
+.email-form .form-select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.1);
+}
+
+/*--------------------------------------------------------------
+# 4. TÍTULOS DE SECCIÓN CON RAYA INFERIOR
+--------------------------------------------------------------*/
+.sidebar-title-underline {
+    display: block; /* Asegura el salto de línea */
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.sidebar-title-underline::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 60px; /* Ancho fijo de la rayita */
+    height: 3px;
+    background: var(--accent-color);
+    bottom: 0;
+    left: 50%; /* Centrado */
+    transform: translateX(-50%);
 }

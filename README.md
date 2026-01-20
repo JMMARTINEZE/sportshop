@@ -26,6 +26,10 @@ del sitio web de la tienda digital, Redes sociales, Newsleers,
 publicidad nativa... ✅
 - Revisar estructura de código con un linter ✅
 - Publicar en github pages ✅
+- Cambiar el footer al nuevo diseño (sólo en noticias por ahora) ⬜
+- Cambiar el detalle del producto al nuevo diseño (sólo en camisetabasket por ahora) ⬜
+- Repasar enlaces y validar que todos estén correctos ⬜
+- Repasar productos de tienda y validar que todos existen ⬜
 - **Opcional**. Conseguir un dominio personalizado y añadir el CNAME al proyecto. ⬜
 
 ## Estructura
@@ -40,6 +44,7 @@ root/
 ├── html/  
 ├── img/  
 ├── js/  
+├── docs/  
 └── videos/  
 
 Es importante tener en cuenta que esta organización no es la más habitual en entornos profesionales para proyectos HTML estáticos, pero se ha seguido para cumplir con los requisitos de la práctica.
@@ -66,9 +71,10 @@ Los textos de las noticias han sido generados mediante inteligencia artificial c
 - https://freesound.org/
 - https://pixabay.com/
 - https://www.pexels.com/
+- https://www.freepik.es/
 
 Es importante señalar que este proyecto no pretende reflejar información deportiva real. Los contenidos se han creado únicamente para simular una tienda deportiva y practicar el diseño y la estructura de una web.
 
 Asimismo, dado que se trata de una práctica de instituto, no todos los enlaces de los artículos son funcionales. Se han implementado algunos ejemplos a modo de demostración, pero la mayoría no redirigen a ninguna página.
 
-Esto no constituye un error, sino una decisión planeada, ya que la implementación completa de todas las noticias queda fuera del alcance del ejercicio actual y podría abordarse en el futuro mediante una base de datos u otro sistema de gestión de contenidos.
+Esto no es un error, sino una decisión planeada, ya que la implementación completa de todas las noticias queda fuera del alcance del ejercicio actual y podría abordarse en el futuro mediante una base de datos u otro sistema de gestión de contenidos.
