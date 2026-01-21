@@ -1,80 +1,53 @@
-# sportshop
-Trabajo de enfoque realizado para la asignatura Lenguajes de Marcas y Sistemas de Gestión de información.
-## ¿Qué es?
-Sportshop es un proyecto académico de desarrollo web utilizando HTML5, CSS y JScript. Se utilizarán librerías de terceros para facilitar las animaciones y el diseño responsive. El sitio está en fase de **desarrollo** y algunas secciones pueden no estar finalizadas o contener errores.
-## Tareas pendientes
-Estas son las tareas pendientes en el desarrollo:
-- Mapa de la estructura del desarrollo
-- Crear niveles
-  - Nivel 0 - Index ✅
-  - Nivel 1 - Tienda ✅
-  - Nivel 1 - Noticias ✅
-  - Nivel 1 - Contacto ✅
-  - Nivel 2 - Detalle de producto ✅
-  - Nivel 2 - Noticias por categoría ✅
-- Formulario con al menos 5 tipos de componentes diferentes (cajas de
-texto, radio buon, listas desplegables, etc…) ✅
-- Tablas ✅
-- Imágenes ✅
-- Audio ✅
-- Videos ✅
-- Enlaces a páginas internas (de nuestro propio sitio Web) y páginas
-externas (de otras direcciones ajenas a la nuestra) ✅
-- iFrames ✅
-- Al menos 1 canal de contenidos a elegir por el alumno. Por ejemplo, Blog
-del sitio web de la tienda digital, Redes sociales, Newsleers,
-publicidad nativa... ✅
-- Revisar estructura de código con un linter ✅
-- Publicar en github pages ✅
-- Cambiar el footer al nuevo diseño (sólo en noticias por ahora) ⬜
-- Cambiar el detalle del producto al nuevo diseño (sólo en camisetabasket por ahora) ⬜
-- Repasar enlaces y validar que todos estén correctos ⬜
-- Repasar productos de tienda y validar que todos existen ⬜
-- **Opcional**. Conseguir un dominio personalizado y añadir el CNAME al proyecto. ⬜
+# SportShop
 
-## Estructura
+Proyecto académico desarrollado para la asignatura **Lenguajes de Marcas y Sistemas de Gestión de la Información**.
 
-Esta es la estructura solicitada para el proyecto:
+## ¿Qué es SportShop?
 
-root/  
-├── index.html  
-├── audios/  
-├── css/  
-├── fuentes/  
-├── html/  
-├── img/  
-├── js/  
-├── docs/  
-└── videos/  
+SportShop es un proyecto de desarrollo web realizado con **HTML5, CSS y JavaScript**, cuyo objetivo es aplicar de forma práctica los contenidos vistos en la asignatura.
 
-Es importante tener en cuenta que esta organización no es la más habitual en entornos profesionales para proyectos HTML estáticos, pero se ha seguido para cumplir con los requisitos de la práctica.
+Se han utilizado librerías de terceros para facilitar animaciones y diseño responsive.  
+El proyecto se considera **finalizado a efectos académicos**, aunque podría ampliarse o refactorizarse en el futuro.
 
-Si en el futuro se quisiera reutilizar o ampliar el proyecto, una estructura más común podría ser la siguiente:
+## Estructura del proyecto
 
-root/  
-├── index.html  
-├── contacto.html  
-├── galeria.html  
-├── ...  
-└── assets/  
-    ├── css/  
-    ├── js/  
-    ├── img/  
-    ├── audios/  
-    └── videos/  
+La estructura del proyecto y la organización de los contenidos se han definido siguiendo **estrictamente el enunciado de la práctica** proporcionado por el profesor.
+
+Dicho enunciado establece, entre otros aspectos:
+- La existencia de un archivo `index.html` como página principal
+- Una estructura mínima por niveles
+- El uso de secciones semánticas (cabecera, navegación, contenido y pie)
+- La inclusión de distintos elementos HTML (formularios, tablas, multimedia, enlaces, etc.)
+- Una estructura de carpetas concreta, estudiada previamente en clase
+
+El cumplimiento de estos requisitos se refleja con detalle en la sección [Requisitos académicos](./requisitos.md "Requisitos académicos"), donde se detallan de forma resumida y práctica.
+
 
 ## Avisos y autoría
-Todo el contenido utilizado en este proyecto procede de fuentes gratuitas y de libre distribución. No soy autora del material original ni reclamo ningún derecho sobre él.
-Los textos de las noticias han sido generados mediante inteligencia artificial con fines exclusivamente educativos, y las imágenes se han obtenido de bancos de recursos gratuitos, concretamente:
-- https://unsplash.com/
-- https://www.vecteezy.com/
-- https://freesound.org/
-- https://pixabay.com/
-- https://www.pexels.com/
-- https://www.freepik.es/
 
-Es importante señalar que este proyecto no pretende reflejar información deportiva real. Los contenidos se han creado únicamente para simular una tienda deportiva y practicar el diseño y la estructura de una web.
+Todo el contenido utilizado en este proyecto procede de **fuentes gratuitas y de libre distribución**. No soy autora del material original ni reclamo derechos sobre él.
 
-Asimismo, dado que se trata de una práctica de instituto, no todos los enlaces de los artículos son funcionales. Se han implementado algunos ejemplos a modo de demostración, pero la mayoría no redirigen a ninguna página.
+Los textos de las noticias han sido generados mediante **inteligencia artificial con fines exclusivamente educativos**.  
 
-Esto no es un error, sino una decisión planeada, ya que la implementación completa de todas las noticias queda fuera del alcance del ejercicio actual y podría abordarse en el futuro mediante una base de datos u otro sistema de gestión de contenidos.
+Las imágenes, audios y recursos gráficos proceden de los siguientes bancos gratuitos:
+
+- [Unsplash](https://unsplash.com/ "Unsplash")
+- [Vecteezy](https://es.vecteezy.com/ "Vecteezy")
+- [FreeSound](https://freesound.org/ "Freesound")
+- [Pixabay](https://pixabay.com/ "Prixabay")
+- [Pexels](https://www.pexels.com/ "Pexels")
+- [Freepik](https://www.freepik.es/ "Freepik")
+
+Este proyecto **no pretende reflejar información deportiva real**. Los contenidos existen únicamente para simular una tienda deportiva y practicar diseño, estructura y marcado web.
+
+Asimismo, al tratarse de una práctica de instituto, **no todos los enlaces son funcionales**.  
+Esto no es un error, sino una decisión consciente, ya que la implementación completa de un sistema de noticias quedaría fuera del alcance del ejercicio y requeriría una base de datos o un CMS.
+
+## Documentación adicional
+
+Este repositorio incluye algunos documentos complementarios:
+
+- 📄 **Licencia**: consulta el archivo [LICENSE](./LICENSE "Licencia") para conocer las condiciones de uso del proyecto.
+- 🔐 **Seguridad**: la política de seguridad se encuentra en [SECURITY.md](./SECURITY.md "Política de seguridad"), donde se explica cómo reportar posibles vulnerabilidades.
+
+
