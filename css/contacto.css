@@ -104,15 +104,15 @@
 }
 
 /*--------------------------------------------------------------
-# 4. TÍTULOS DE SECCIÓN CON RAYA INFERIOR
+# 4. TÍTULOS DE SECCIÓN CON RAYA INFERIOR (CENTRADOS)
 --------------------------------------------------------------*/
-.sidebar-title-underline {
+.title-underline {
     display: block; /* Asegura el salto de línea */
     position: relative;
     padding-bottom: 15px;
 }
 
-.sidebar-title-underline::after {
+.title-underline::after {
     content: "";
     position: absolute;
     display: block;
